@@ -347,7 +347,7 @@ namespace Apotek
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(36, 16);
             this.label21.TabIndex = 8;
-            this.label21.Text = "V 2.4";
+            this.label21.Text = "V 2.6";
             // 
             // guna2VSeparator1
             // 

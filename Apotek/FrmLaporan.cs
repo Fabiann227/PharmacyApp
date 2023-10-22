@@ -44,6 +44,8 @@ namespace Apotek
             string formattedsDate = startDate.ToString("dd MMMM yyyy", new CultureInfo("id-ID"));
             string formattedeDate = endDate.ToString("dd MMMM yyyy", new CultureInfo("id-ID"));
 
+            Console.WriteLine(startDate);
+
             string query = "SELECT DISTINCT no_faktur, tgl, nama_pelanggan, alamat, total_barang, total_harga, tgl_peng, total_keuntungan FROM tb_barang_keluar WHERE tgl_peng BETWEEN @startDate AND @endDate";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -88,8 +90,9 @@ namespace Apotek
 
                                     Image editIcon = Properties.Resources.icons8_info_24px_1;
                                     Image returIcon = Properties.Resources.icons8_refund_2_20px;
+                                    Image deleteIcon = Properties.Resources.icons8_delete_24px_1;
 
-                                    dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, total_keuntungan, tgl_peng, editIcon, returIcon);
+                                    dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, total_keuntungan, tgl_peng, editIcon, returIcon, deleteIcon);
 
                                     totalPenjualan += totalHarga;
                                     totalkeuntungan += totalKeuntungan;
@@ -157,8 +160,9 @@ namespace Apotek
 
                                     Image editIcon = Properties.Resources.icons8_info_24px_1;
                                     Image returIcon = Properties.Resources.icons8_refund_2_20px;
+                                    Image deleteIcon = Properties.Resources.icons8_delete_24px_1;
 
-                                    dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, total_keuntungan, tgl_peng, editIcon, returIcon);
+                                    dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, total_keuntungan, tgl_peng, editIcon, returIcon, deleteIcon);
 
                                     totalPenjualan += totalHarga;
                                     totalkeuntungan += totalKeuntungan;
@@ -225,8 +229,9 @@ namespace Apotek
 
                                     Image editIcon = Properties.Resources.icons8_info_24px_1;
                                     Image returIcon = Properties.Resources.icons8_refund_2_20px;
+                                    Image deleteIcon = Properties.Resources.icons8_delete_24px_1;
 
-                                    dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, total_keuntungan, tgl_peng, editIcon, returIcon);
+                                    dgv.Rows.Add(no_faktur, tgl, namaPelanggan, alamat, totalBarang, total_harga, total_keuntungan, tgl_peng, editIcon, returIcon, deleteIcon);
 
                                     totalPenjualan += totalHarga;
                                     totalkeuntungan += totalKeuntungan;
@@ -266,6 +271,41 @@ namespace Apotek
                 FrmRetur frmRetur = new FrmRetur();
                 frmRetur.NoFaktur = nofaktur.ToString();
                 frmRetur.ShowDialog();
+            }
+            else if (e.ColumnIndex == dgv.Columns["DeleteColumn"].Index && e.RowIndex >= 0)
+            {
+                int id = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["Column1"].Value);
+                if (MessageBox.Show("Apakah kamu yakin ingin menghapus data ini?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+                        MySqlConnection connection = new MySqlConnection(connectionString);
+                        connection.Open();
+
+                        string deleteQuery = "DELETE FROM tb_barang_keluar WHERE no_faktur = @id";
+                        MySqlCommand deleteCmd = new MySqlCommand(deleteQuery, connection);
+                        deleteCmd.Parameters.AddWithValue("@id", id);
+
+                        int rowsAffected = deleteCmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index);
+                            MessageBox.Show("Data berhasil dihapus");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data tidak ditemukan atau gagal dihapus");
+                        }
+
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Terjadi kesalahan 5: " + ex.Message);
+                    }
+                }
             }
         }
 

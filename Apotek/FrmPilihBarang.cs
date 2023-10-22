@@ -78,7 +78,7 @@ namespace Apotek
                                     string hargaRupiah4 = hargaJual4.ToString("N0", new CultureInfo("id-ID"));
 
                                     // Menambahkan data ke DataGridView
-                                    dgv.Rows.Add(kodeBarang, namaBarang, jenisBarang, satuanBarang, jumlahBarang, lempengbox, butirLempeng, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, hargaRupiah4);
+                                    dgv.Rows.Add(kodeBarang, namaBarang, jumlahBarang, lempengbox, butirLempeng, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, hargaRupiah4);
                                 }
                             }
                             else
@@ -140,7 +140,7 @@ namespace Apotek
                                     string hargaRupiah4 = hargaJual4.ToString("N0", new CultureInfo("id-ID"));
 
                                     // Menambahkan data ke DataGridView
-                                    dgv.Rows.Add(kodeBarang, namaBarang, jenisBarang, satuanBarang, jumlahBarang, lempengbox, butirLempeng, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, hargaRupiah4);
+                                    dgv.Rows.Add(kodeBarang, namaBarang, jumlahBarang, lempengbox, butirLempeng, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, hargaRupiah4);
 
                                 }
                             }

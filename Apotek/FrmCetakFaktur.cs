@@ -32,7 +32,7 @@ namespace Apotek
         private void FrmCetakFaktur_Load(object sender, EventArgs e)
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
-            string query = "SELECT *, CASE WHEN qty != 0 THEN harga ELSE harga END AS harga_total, CASE WHEN qty != 0 THEN qty WHEN qty_butir != 0 THEN qty_butir ELSE qty_lempeng END AS qty_total, CASE WHEN qty != 0 THEN satuan WHEN qty_lempeng != 0 THEN CASE WHEN satuan = 'Kotak' THEN 'Pcs' ELSE 'Lempeng' END WHEN qty_butir != 0 THEN 'Tablet' END AS satuan_akhir FROM tb_barang_keluar WHERE no_faktur = '" + NoFaktur + "'";
+            string query = "SELECT *, CASE WHEN qty != 0 THEN harga ELSE harga END AS harga_total, CASE WHEN qty != 0 THEN qty WHEN qty_butir != 0 THEN qty_butir ELSE qty_lempeng END AS qty_total FROM tb_barang_keluar WHERE no_faktur = '" + NoFaktur + "'";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {

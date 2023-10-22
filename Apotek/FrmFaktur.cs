@@ -414,7 +414,6 @@ namespace Apotek
                             string qty_lempeng = row.Cells["ColumnQtyLempeng"].Value.ToString();
                             
                             string qty_butir = row.Cells["ColumnQtyButir"].Value.ToString();
-                            string satuan = row.Cells["column5"].Value.ToString();
                             string namaPelanggan = NAMAPELANGGAN.Text;
                             string alamat = ALAMAT.Text;
                             string tglPengembalian = TGLPENGAMBILAN.Value.ToString("yyyy-MM-dd");
@@ -534,7 +533,7 @@ namespace Apotek
                             subtotal = subtotal.Replace(".", "");
 
                             string query = "INSERT INTO `tb_barang_keluar` (`no_faktur`, `kode_barang`, `nama_barang`, `level_harga`, `harga`, `qty`, `qty_lempeng`, `qty_butir`, `satuan`, `nama_pelanggan`, `alamat`, `tgl_peng`, `jatuh_tempo`, `subtotal`, `total_barang`, `total_harga`) " +
-                                            "VALUES (@noFaktur, @kodeBarang, @namaBarang, @levelHarga, @harga, @qty, @qty_lempeng, @qty_butir, @satuan, @namaPelanggan, @alamat, @tglPengembalian, @jatuhTempo, @subtotal, @totalBarang, @totalHarga)";
+                                            "VALUES (@noFaktur, @kodeBarang, @namaBarang, @levelHarga, @harga, @qty, @qty_lempeng, @qty_butir, '-', @namaPelanggan, @alamat, @tglPengembalian, @jatuhTempo, @subtotal, @totalBarang, @totalHarga)";
 
                             using (MySqlCommand cmd = new MySqlCommand(query, connection))
                             {
@@ -546,7 +545,6 @@ namespace Apotek
                                 cmd.Parameters.AddWithValue("@qty", qty);
                                 cmd.Parameters.AddWithValue("@qty_lempeng", qty_lempeng);
                                 cmd.Parameters.AddWithValue("@qty_butir", qty_butir);
-                                cmd.Parameters.AddWithValue("@satuan", satuan);
                                 cmd.Parameters.AddWithValue("@namaPelanggan", namaPelanggan);
                                 cmd.Parameters.AddWithValue("@alamat", alamat);
                                 cmd.Parameters.AddWithValue("@tglPengembalian", tglPengembalian);
@@ -591,7 +589,7 @@ namespace Apotek
                 string subTotal = SUBTOTAL.Text;
                 subTotal = subTotal.Replace(".", "");
 
-                string kueri = "INSERT INTO `tb_cart`(`no_faktur`, `kode_barang`, `nama_barang`, `level_harga`, `harga`, `qty`, `qty_lempeng`, `qty_butir`, `satuan`, `subtotal`) VALUES ('" + lbl_NOFAKTUR.Text + "', '" + kode_barang + "', '" + this.NAMABARANG.Text + "', '" + this.LEVELHARGA.Text + "', '" + hargaText + "', '" + this.QTY.Text + "', '" + this.LEMPENG.Text + "', '" + this.BUTIR.Text + "', '" + this.SATUANBARANG.Text + "', '" + subTotal + "')";
+                string kueri = "INSERT INTO `tb_cart`(`no_faktur`, `kode_barang`, `nama_barang`, `satuan`, `level_harga`, `harga`, `qty`, `qty_lempeng`, `qty_butir`, `subtotal`) VALUES ('" + lbl_NOFAKTUR.Text + "', '" + kode_barang + "', '" + this.NAMABARANG.Text + "', '-', '" + this.LEVELHARGA.Text + "', '" + hargaText + "', '" + this.QTY.Text + "', '" + this.LEMPENG.Text + "', '" + this.BUTIR.Text + "', '" + subTotal + "')";
 
                 if (this.connection.State == ConnectionState.Closed)
                     this.connection.Open();
@@ -610,7 +608,6 @@ namespace Apotek
                 harga_jual4 = "0";
                 this.HARGA.Text = "";
                 this.QTY.Value = 1;
-                this.SATUANBARANG.Text = "";
                 this.SUBTOTAL.Text = "";
 
                 RefreshCart();
@@ -639,7 +636,7 @@ namespace Apotek
                 {
                     connection.Open();
 
-                    string query = "SELECT nama_barang, satuan_barang, stok_satuan, stok_lempeng, harga_lempeng, harga_jual1, harga_jual2, harga_jual3 FROM tb_barang_masuk WHERE kode_barang = @kode_barang";
+                    string query = "SELECT nama_barang, stok_satuan, stok_lempeng, harga_lempeng, harga_jual1, harga_jual2, harga_jual3 FROM tb_barang_masuk WHERE kode_barang = @kode_barang";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     cmd.Parameters.AddWithValue("@kode_barang", barangInfo.KodeBarang);
 
@@ -648,12 +645,11 @@ namespace Apotek
                     if (reader.Read())
                     {
                         NAMABARANG.Text = reader["nama_barang"].ToString();
-                        SATUANBARANG.Text = reader["satuan_barang"].ToString();
 
-                        decimal hargaJual4 = reader.GetDecimal(4);
-                        decimal hargaJual1 = reader.GetDecimal(5);
-                        decimal hargaJual2 = reader.GetDecimal(6);
-                        decimal hargaJual3 = reader.GetDecimal(7);
+                        decimal hargaJual4 = reader.GetDecimal(3);
+                        decimal hargaJual1 = reader.GetDecimal(4);
+                        decimal hargaJual2 = reader.GetDecimal(5);
+                        decimal hargaJual3 = reader.GetDecimal(6);
 
                         harga_jual4 = hargaJual4.ToString("N0", new CultureInfo("id-ID"));
                         harga_jual1 = hargaJual1.ToString("N0", new CultureInfo("id-ID"));
@@ -680,49 +676,22 @@ namespace Apotek
                         int lempengPerBox = GetLempengPerBox(barangInfo.KodeBarang);
                         int butirPerLempeng = GetButirPerLempeng(barangInfo.KodeBarang);
 
-                        if (SATUANBARANG.Text == "Box")
+                        if (lempengPerBox > 0)
                         {
-                            QTY.Value = 0;
-                            LEMPENG.Value = 0;
-                            BUTIR.Value = 0;
-                            lbl_BUTIR.Enabled = true;
-                            qtyText.Text = "Per Box";
-                            txtLempeng.Text = "Per Strip";
-                            txtLempeng.Enabled = true;
-
-                            if(lempengPerBox > 0)
-                            {
-                                LEMPENG.Enabled = true;
-                            }
-                            if (butirPerLempeng > 0)
-                            {
-                                BUTIR.Enabled = true;
-                            }
-                        }
-                        else if (SATUANBARANG.Text == "Kotak")
-                        {
-                            QTY.Value = 0;
-                            LEMPENG.Value = 0;
-                            BUTIR.Value = 0;
-                            qtyText.Text = "Per Kotak";
-                            txtLempeng.Text = "Per Pcs";
-                            txtLempeng.Enabled = true;
-                            BUTIR.Enabled = false;
-
-                            if (lempengPerBox > 0)
-                            {
-                                LEMPENG.Enabled = true;
-                            }
+                            LEMPENG.Enabled = true;
                         }
                         else
                         {
                             LEMPENG.Enabled = false;
-                            txtLempeng.Enabled = false;
-                            qtyText.Text = "Quantity";
-                            LEMPENG.Value = 0;
-                            BUTIR.Value = 0;
+                        }
+                        
+                        if (butirPerLempeng > 0)
+                        {
+                            BUTIR.Enabled = true;
+                        }
+                        else
+                        {
                             BUTIR.Enabled = false;
-                            lbl_BUTIR.Enabled = false;
                         }
 
                         LEVELHARGA.SelectedIndex = 0;
@@ -785,7 +754,6 @@ namespace Apotek
             if (string.IsNullOrEmpty(NAMABARANG.Text) ||
                 SUBTOTAL.Text == "0.000" ||
                 string.IsNullOrEmpty(HARGA.Text) ||
-                string.IsNullOrEmpty(SATUANBARANG.Text) ||
                 string.IsNullOrEmpty(LEVELHARGA.Text) ||
                 string.IsNullOrEmpty(SUBTOTAL.Text))
             {

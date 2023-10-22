@@ -38,7 +38,7 @@ namespace Apotek
 
             DateTime date = DatePicker.Value;
 
-            string query = "SELECT total_harga FROM tb_barang_keluar WHERE tgl_peng = @date";
+            string query = "SELECT DISTINCT no_faktur, total_harga FROM tb_barang_keluar WHERE tgl_peng = @date";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -59,7 +59,7 @@ namespace Apotek
                                 // Loop melalui hasil pembacaan
                                 while (reader.Read())
                                 {
-                                    decimal totalHarga = reader.GetDecimal(0);
+                                    decimal totalHarga = reader.GetDecimal(1);
                                     totalPenjualan += totalHarga;
                                 }
 

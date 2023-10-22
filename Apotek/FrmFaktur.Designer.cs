@@ -39,7 +39,6 @@ namespace Apotek
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.BUTIR = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.LEMPENG = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.QTY = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -54,7 +53,6 @@ namespace Apotek
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.SATUANBARANG = new Guna.UI2.WinForms.Guna2TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.SUBTOTAL = new Guna.UI2.WinForms.Guna2TextBox();
             this.KEUNTUNGANBUTIR = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,20 +61,6 @@ namespace Apotek
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.JATUHTEMPO = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lbl_TOTALKEUNTUNGAN = new System.Windows.Forms.Label();
-            this.lbl_TOTAL = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TGLPENGAMBILAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_NOFAKTUR = new System.Windows.Forms.Label();
-            this.lbl_TOTALBARANG = new System.Windows.Forms.Label();
-            this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,6 +76,20 @@ namespace Apotek
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.JATUHTEMPO = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lbl_TOTALKEUNTUNGAN = new System.Windows.Forms.Label();
+            this.lbl_TOTAL = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TGLPENGAMBILAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_NOFAKTUR = new System.Windows.Forms.Label();
+            this.lbl_TOTALBARANG = new System.Windows.Forms.Label();
+            this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BUTIR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LEMPENG)).BeginInit();
@@ -177,7 +175,6 @@ namespace Apotek
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.BUTIR);
             this.groupBox2.Controls.Add(this.LEMPENG);
             this.groupBox2.Controls.Add(this.QTY);
@@ -192,7 +189,6 @@ namespace Apotek
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.SATUANBARANG);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.SUBTOTAL);
             this.groupBox2.Controls.Add(this.KEUNTUNGANBUTIR);
@@ -206,21 +202,12 @@ namespace Apotek
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(9, 67);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 14);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Satuan";
-            // 
             // BUTIR
             // 
             this.BUTIR.BackColor = System.Drawing.Color.Transparent;
             this.BUTIR.BorderRadius = 13;
             this.BUTIR.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.BUTIR.Enabled = false;
             this.BUTIR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BUTIR.Location = new System.Drawing.Point(298, 99);
             this.BUTIR.Name = "BUTIR";
@@ -233,6 +220,7 @@ namespace Apotek
             this.LEMPENG.BackColor = System.Drawing.Color.Transparent;
             this.LEMPENG.BorderRadius = 13;
             this.LEMPENG.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LEMPENG.Enabled = false;
             this.LEMPENG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LEMPENG.Location = new System.Drawing.Point(299, 61);
             this.LEMPENG.Name = "LEMPENG";
@@ -317,7 +305,6 @@ namespace Apotek
             // lbl_BUTIR
             // 
             this.lbl_BUTIR.AutoSize = true;
-            this.lbl_BUTIR.Enabled = false;
             this.lbl_BUTIR.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_BUTIR.Location = new System.Drawing.Point(233, 107);
             this.lbl_BUTIR.Name = "lbl_BUTIR";
@@ -347,7 +334,6 @@ namespace Apotek
             // txtLempeng
             // 
             this.txtLempeng.AutoSize = true;
-            this.txtLempeng.Enabled = false;
             this.txtLempeng.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLempeng.Location = new System.Drawing.Point(233, 69);
             this.txtLempeng.Name = "txtLempeng";
@@ -416,27 +402,6 @@ namespace Apotek
             this.label10.Size = new System.Drawing.Size(122, 26);
             this.label10.TabIndex = 2;
             this.label10.Text = "* Pilih salah satu Beli\r\nPer Box, Strip atau Tab";
-            // 
-            // SATUANBARANG
-            // 
-            this.SATUANBARANG.BorderRadius = 15;
-            this.SATUANBARANG.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SATUANBARANG.DefaultText = "";
-            this.SATUANBARANG.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SATUANBARANG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SATUANBARANG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SATUANBARANG.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SATUANBARANG.Enabled = false;
-            this.SATUANBARANG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SATUANBARANG.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SATUANBARANG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SATUANBARANG.Location = new System.Drawing.Point(92, 61);
-            this.SATUANBARANG.Name = "SATUANBARANG";
-            this.SATUANBARANG.PasswordChar = '\0';
-            this.SATUANBARANG.PlaceholderText = "";
-            this.SATUANBARANG.SelectedText = "";
-            this.SATUANBARANG.Size = new System.Drawing.Size(126, 30);
-            this.SATUANBARANG.TabIndex = 1;
             // 
             // label17
             // 
@@ -644,6 +609,113 @@ namespace Apotek
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
+            // ID
+            // 
+            this.ID.FillWeight = 30F;
+            this.ID.HeaderText = "#";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 30F;
+            this.Column7.HeaderText = "No";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.FillWeight = 70F;
+            this.Column10.HeaderText = "Kode Barang";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 150F;
+            this.Column1.HeaderText = "Nama Barang";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 70.9137F;
+            this.Column2.HeaderText = "Level Harga";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 70.9137F;
+            this.Column3.HeaderText = "Harga";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 70.9137F;
+            this.Column4.HeaderText = "Qty";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // ColumnQtyLempeng
+            // 
+            this.ColumnQtyLempeng.FillWeight = 70.9137F;
+            this.ColumnQtyLempeng.HeaderText = "Qty (Lempeng)";
+            this.ColumnQtyLempeng.Name = "ColumnQtyLempeng";
+            this.ColumnQtyLempeng.ReadOnly = true;
+            // 
+            // ColumnQtyButir
+            // 
+            this.ColumnQtyButir.HeaderText = "Qty (Butir)";
+            this.ColumnQtyButir.Name = "ColumnQtyButir";
+            this.ColumnQtyButir.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 70.9137F;
+            this.Column5.HeaderText = "Satuan";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 70.9137F;
+            this.Column6.HeaderText = "Subtotal";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.FillWeight = 40F;
+            this.Column11.HeaderText = "Aksi";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "keuntungan";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Visible = false;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Keuntungan lempeng";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Visible = false;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "keuntungan butir";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Visible = false;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -833,113 +905,6 @@ namespace Apotek
             this.btnNew.Text = "Tambah Barang";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // ID
-            // 
-            this.ID.FillWeight = 30F;
-            this.ID.HeaderText = "#";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 30F;
-            this.Column7.HeaderText = "No";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.FillWeight = 70F;
-            this.Column10.HeaderText = "Kode Barang";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 150F;
-            this.Column1.HeaderText = "Nama Barang";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 70.9137F;
-            this.Column2.HeaderText = "Level Harga";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 70.9137F;
-            this.Column3.HeaderText = "Harga";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 70.9137F;
-            this.Column4.HeaderText = "Qty";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // ColumnQtyLempeng
-            // 
-            this.ColumnQtyLempeng.FillWeight = 70.9137F;
-            this.ColumnQtyLempeng.HeaderText = "Qty (Lempeng)";
-            this.ColumnQtyLempeng.Name = "ColumnQtyLempeng";
-            this.ColumnQtyLempeng.ReadOnly = true;
-            // 
-            // ColumnQtyButir
-            // 
-            this.ColumnQtyButir.HeaderText = "Qty (Butir)";
-            this.ColumnQtyButir.Name = "ColumnQtyButir";
-            this.ColumnQtyButir.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 70.9137F;
-            this.Column5.HeaderText = "Satuan";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 70.9137F;
-            this.Column6.HeaderText = "Subtotal";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.FillWeight = 40F;
-            this.Column11.HeaderText = "Aksi";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "keuntungan";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Visible = false;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Keuntungan lempeng";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Visible = false;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "keuntungan butir";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Visible = false;
-            // 
             // FrmFaktur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -992,7 +957,6 @@ namespace Apotek
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox NAMABARANG;
-        private Guna.UI2.WinForms.Guna2TextBox SATUANBARANG;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_NOFAKTUR;
@@ -1002,7 +966,6 @@ namespace Apotek
         private Guna.UI2.WinForms.Guna2DateTimePicker TGLPENGAMBILAN;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2TextBox SUBTOTAL;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label txtLempeng;
         private System.Windows.Forms.Label lbl_TOTALBARANG;
         private System.Windows.Forms.Label label7;

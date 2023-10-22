@@ -34,10 +34,14 @@ namespace Apotek
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.KODEBARANG = new Guna.UI2.WinForms.Guna2TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.KODEBRG = new Guna.UI2.WinForms.Guna2TextBox();
+            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lempeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +50,6 @@ namespace Apotek
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.KODEBARANG = new Guna.UI2.WinForms.Guna2TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.KODEBRG = new Guna.UI2.WinForms.Guna2TextBox();
-            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,8 +79,6 @@ namespace Apotek
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.Column4,
             this.Column6,
             this.lempeng,
             this.Column5,
@@ -139,79 +135,6 @@ namespace Apotek
             this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Kode Barang";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 150F;
-            this.Column2.HeaderText = "Nama Barang";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Jenis";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Satuan";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Stok";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // lempeng
-            // 
-            this.lempeng.HeaderText = "Stok (Lempeng)";
-            this.lempeng.Name = "lempeng";
-            this.lempeng.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Stok (Butir)";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "HB";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "HJ 1";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "HJ 2";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "HJ 3";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "HJ 4";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -321,6 +244,68 @@ namespace Apotek
             this.SEARCH.TabIndex = 5;
             this.SEARCH.TextChanged += new System.EventHandler(this.SEARCH_TextChanged);
             // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 70F;
+            this.Column1.HeaderText = "Kode";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 300F;
+            this.Column2.HeaderText = "Nama Barang";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Stok";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // lempeng
+            // 
+            this.lempeng.HeaderText = "Stok (Lempeng)";
+            this.lempeng.Name = "lempeng";
+            this.lempeng.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Stok (Butir)";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "HB";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "HJ 1";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "HJ 2";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "HJ 3";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "HJ 4";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
             // FrmPilihBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,10 +335,9 @@ namespace Apotek
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox KODEBARANG;
         private System.Windows.Forms.GroupBox groupBox2;
+        private Guna.UI2.WinForms.Guna2TextBox KODEBRG;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn lempeng;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
@@ -362,6 +346,5 @@ namespace Apotek
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private Guna.UI2.WinForms.Guna2TextBox KODEBRG;
     }
 }

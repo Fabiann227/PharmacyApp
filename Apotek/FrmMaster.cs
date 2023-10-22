@@ -70,8 +70,6 @@ namespace Apotek
             BUTIRBOX.Value = 0;
             JUMLAHBARANG.Value = 0;
             HARGALEMPENG.Text = "0";
-            JENISBARANG.SelectedIndex = -1;
-            SATUANBARANG.SelectedIndex = 0;
         }
         private void HideTextBox()
         {
@@ -145,7 +143,7 @@ namespace Apotek
                                 Image editIcon = Properties.Resources.icons8_info_24px_1;
 
                                 // Menambahkan data ke DataGridView
-                                dgv.Rows.Add(kodeBarang, namaBarang, jenisBarang, satuanBarang, stokAwal, lempengbox, butirStrip, stokSatuan, stokLempeng, stokButir, stokAkhir, total_harga, distributor, explayerd, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, harga_strip, editIcon);
+                                dgv.Rows.Add(kodeBarang, namaBarang, stokAwal, lempengbox, butirStrip, stokSatuan, stokLempeng, stokButir, stokAkhir, total_harga, distributor, explayerd, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, harga_strip, editIcon);
                             }
                         }
                         else
@@ -220,7 +218,7 @@ namespace Apotek
                                 Image editIcon = Properties.Resources.icons8_info_24px_1;
 
                                 // Menambahkan data ke DataGridView
-                                dgv.Rows.Add(kodeBarang, namaBarang, jenisBarang, satuanBarang, stokAwal, lempengbox, butirStrip, stokSatuan, stokLempeng, stokButir, stokAkhir, total_harga, distributor, explayerd, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, harga_strip, editIcon);
+                                dgv.Rows.Add(kodeBarang, namaBarang, stokAwal, lempengbox, butirStrip, stokSatuan, stokLempeng, stokButir, stokAkhir, total_harga, distributor, explayerd, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, harga_strip, editIcon);
                             }
                         }
                         else
@@ -257,8 +255,6 @@ namespace Apotek
 
             string query = "UPDATE `tb_barang_masuk` SET " +
                 "`nama_barang` = '" + this.NAMABARANG.Text + "', " +
-                "`jenis_barang` = '" + this.JENISBARANG.Text + "', " +
-                "`satuan_barang` = '" + this.SATUANBARANG.Text + "', " +
                 "`lempeng_box` = '" + this.LEMPENGBOX.Text + "', " +
                 "`butir_lempeng` = '" + this.BUTIRBOX.Text + "', " +
                 "`stok_awal` = '" + this.JUMLAHBARANG.Text + "', " +
@@ -356,7 +352,7 @@ namespace Apotek
 
                 decimal qtyButir = BUTIRBOX.Value;
 
-                string kueri = "INSERT INTO `tb_barang_masuk`(`nama_barang`, `jenis_barang`, `satuan_barang`, `lempeng_box`, `butir_lempeng`, `stok_awal`, `stok_satuan`, `stok_akhir`, `total_harga`, `distributor`, `modal`, `harga_lempeng`, `explayerd`, `harga_jual1`, `laba1`, `harga_jual2`, `laba2`, `harga_jual3`, `laba3`, `laba_lempeng`) VALUES ('" + this.NAMABARANG.Text + "','" + this.JENISBARANG.Text + "','" + this.SATUANBARANG.Text + "','" + this.LEMPENGBOX.Text + "','" + this.BUTIRBOX.Text + "','" + this.JUMLAHBARANG.Text + "','" + this.JUMLAHBARANG.Text + "','" + this.JUMLAHBARANG.Text + "','" + totalHarga + "','" + this.DISTRIBUTOR.Text + "','" + modalText + "','" + hargaJualLempeng + "','" + this.EXPLAYERD.Value.ToString("yyyy-MM-dd HH:mm:ss") + "','" + hargaJual1 + "','" + this.LABA1.Text + "','" + hargaJual2 + "','" + this.LABA2.Text + "','" + hargaJual3 + "','" + this.LABA3.Text + "','" + this.LABALEMPENG.Text + "')";
+                string kueri = "INSERT INTO `tb_barang_masuk`(`nama_barang`, `lempeng_box`, `butir_lempeng`, `stok_awal`, `stok_satuan`, `stok_akhir`, `total_harga`, `distributor`, `modal`, `harga_lempeng`, `explayerd`, `harga_jual1`, `laba1`, `harga_jual2`, `laba2`, `harga_jual3`, `laba3`, `laba_lempeng`) VALUES ('" + this.NAMABARANG.Text + "','" + this.LEMPENGBOX.Text + "','" + this.BUTIRBOX.Text + "','" + this.JUMLAHBARANG.Text + "','" + this.JUMLAHBARANG.Text + "','" + this.JUMLAHBARANG.Text + "','" + totalHarga + "','" + this.DISTRIBUTOR.Text + "','" + modalText + "','" + hargaJualLempeng + "','" + this.EXPLAYERD.Value.ToString("yyyy-MM-dd HH:mm:ss") + "','" + hargaJual1 + "','" + this.LABA1.Text + "','" + hargaJual2 + "','" + this.LABA2.Text + "','" + hargaJual3 + "','" + this.LABA3.Text + "','" + this.LABALEMPENG.Text + "')";
 
                 if (this.connection.State == ConnectionState.Closed)
                     this.connection.Open();
@@ -379,8 +375,6 @@ namespace Apotek
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(NAMABARANG.Text) ||
-                string.IsNullOrEmpty(JENISBARANG.Text) ||
-                string.IsNullOrEmpty(SATUANBARANG.Text) ||
                 string.IsNullOrEmpty(JUMLAHBARANG.Text) ||
                 string.IsNullOrEmpty(TOTALHARGA.Text) ||
                 string.IsNullOrEmpty(DISTRIBUTOR.Text) ||
@@ -491,8 +485,6 @@ namespace Apotek
 
                     SelectedID = row.Cells["Column1"].Value.ToString();
                     NAMABARANG.Text = row.Cells["Column2"].Value.ToString();
-                    JENISBARANG.Text = row.Cells["Column3"].Value.ToString();
-                    SATUANBARANG.Text = row.Cells["Column4"].Value.ToString();
                     MODAL.Text = modalText;
                     JUMLAHBARANG.Text = row.Cells["Column6"].Value.ToString();
                     DISTRIBUTOR.Text = row.Cells["Column8"].Value.ToString();

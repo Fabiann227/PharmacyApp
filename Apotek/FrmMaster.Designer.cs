@@ -39,8 +39,6 @@ namespace Apotek
             this.BUTIRBOX = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.LEMPENGBOX = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.JUMLAHBARANG = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.SATUANBARANG = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.JENISBARANG = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,8 +54,6 @@ namespace Apotek
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.LABA2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.LABA3 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -75,22 +71,8 @@ namespace Apotek
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnInsert = new Guna.UI2.WinForms.Guna2Button();
-            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gBstok = new System.Windows.Forms.GroupBox();
-            this.stokStrip = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.stokTablet = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.stokSatuan = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +89,18 @@ namespace Apotek
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnInsert = new Guna.UI2.WinForms.Guna2Button();
+            this.SEARCH = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gBstok = new System.Windows.Forms.GroupBox();
+            this.stokStrip = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.stokTablet = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.stokSatuan = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BUTIRBOX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LEMPENGBOX)).BeginInit();
@@ -127,8 +121,6 @@ namespace Apotek
             this.groupBox2.Controls.Add(this.BUTIRBOX);
             this.groupBox2.Controls.Add(this.LEMPENGBOX);
             this.groupBox2.Controls.Add(this.JUMLAHBARANG);
-            this.groupBox2.Controls.Add(this.SATUANBARANG);
-            this.groupBox2.Controls.Add(this.JENISBARANG);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label3);
@@ -144,8 +136,6 @@ namespace Apotek
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.LABA2);
             this.groupBox2.Controls.Add(this.LABA3);
@@ -238,57 +228,6 @@ namespace Apotek
             this.JUMLAHBARANG.Size = new System.Drawing.Size(75, 29);
             this.JUMLAHBARANG.TabIndex = 3;
             this.JUMLAHBARANG.ValueChanged += new System.EventHandler(this.JUMLAHBARANG_ValueChanged);
-            // 
-            // SATUANBARANG
-            // 
-            this.SATUANBARANG.BackColor = System.Drawing.Color.Transparent;
-            this.SATUANBARANG.BorderRadius = 14;
-            this.SATUANBARANG.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.SATUANBARANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SATUANBARANG.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SATUANBARANG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SATUANBARANG.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SATUANBARANG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.SATUANBARANG.ItemHeight = 23;
-            this.SATUANBARANG.Items.AddRange(new object[] {
-            "Box",
-            "Kotak",
-            "Strip",
-            "Tube",
-            "Vial",
-            "Ampul",
-            "Botol",
-            "Pcs",
-            "Rol"});
-            this.SATUANBARANG.Location = new System.Drawing.Point(101, 106);
-            this.SATUANBARANG.Name = "SATUANBARANG";
-            this.SATUANBARANG.Size = new System.Drawing.Size(114, 29);
-            this.SATUANBARANG.TabIndex = 10;
-            this.SATUANBARANG.SelectedValueChanged += new System.EventHandler(this.SATUANBARANG_SelectedValueChanged);
-            // 
-            // JENISBARANG
-            // 
-            this.JENISBARANG.BackColor = System.Drawing.Color.Transparent;
-            this.JENISBARANG.BorderRadius = 14;
-            this.JENISBARANG.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.JENISBARANG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.JENISBARANG.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.JENISBARANG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.JENISBARANG.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.JENISBARANG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.JENISBARANG.ItemHeight = 23;
-            this.JENISBARANG.Items.AddRange(new object[] {
-            "Capsul",
-            "Tablet",
-            "Salf",
-            "Botol",
-            "Syrup",
-            "Alkes",
-            "Injek"});
-            this.JENISBARANG.Location = new System.Drawing.Point(101, 63);
-            this.JENISBARANG.Name = "JENISBARANG";
-            this.JENISBARANG.Size = new System.Drawing.Size(114, 29);
-            this.JENISBARANG.TabIndex = 10;
             // 
             // label10
             // 
@@ -444,26 +383,6 @@ namespace Apotek
             this.label5.Size = new System.Drawing.Size(60, 14);
             this.label5.TabIndex = 3;
             this.label5.Text = "Stok Awal";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 14);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Satuan";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 14);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Jenis Barang";
             // 
             // label19
             // 
@@ -790,8 +709,6 @@ namespace Apotek
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.Column4,
             this.Column6,
             this.Column17,
             this.Column14,
@@ -857,6 +774,130 @@ namespace Apotek
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 60F;
+            this.Column1.HeaderText = "Kode";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 320F;
+            this.Column2.HeaderText = "Nama Barang";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Stok Awal";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Strip (Box)";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            this.Column17.Visible = false;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Tab (Strip)";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Visible = false;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Box";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "Lempeng";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Butir";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.FillWeight = 150F;
+            this.Column10.HeaderText = "Stok Akhir";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 130F;
+            this.Column7.HeaderText = "Total Harga";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 170F;
+            this.Column8.HeaderText = "Distributor";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 110F;
+            this.Column9.HeaderText = "Explayerd";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 120F;
+            this.Column5.HeaderText = "HB";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.FillWeight = 120F;
+            this.Column11.HeaderText = "HJ 1";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.FillWeight = 120F;
+            this.Column13.HeaderText = "HJ 2";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.FillWeight = 120F;
+            this.Column15.HeaderText = "HJ 3";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "HJ 4";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Visible = false;
             // 
             // guna2Button2
             // 
@@ -980,6 +1021,11 @@ namespace Apotek
             this.stokStrip.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stokStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stokStrip.Location = new System.Drawing.Point(63, 61);
+            this.stokStrip.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.stokStrip.Name = "stokStrip";
             this.stokStrip.Size = new System.Drawing.Size(75, 29);
             this.stokStrip.TabIndex = 3;
@@ -992,6 +1038,11 @@ namespace Apotek
             this.stokTablet.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stokTablet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stokTablet.Location = new System.Drawing.Point(63, 105);
+            this.stokTablet.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.stokTablet.Name = "stokTablet";
             this.stokTablet.Size = new System.Drawing.Size(75, 29);
             this.stokTablet.TabIndex = 3;
@@ -1004,6 +1055,11 @@ namespace Apotek
             this.stokSatuan.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stokSatuan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stokSatuan.Location = new System.Drawing.Point(63, 15);
+            this.stokSatuan.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.stokSatuan.Name = "stokSatuan";
             this.stokSatuan.Size = new System.Drawing.Size(75, 29);
             this.stokSatuan.TabIndex = 3;
@@ -1038,142 +1094,6 @@ namespace Apotek
             this.label4.Size = new System.Drawing.Size(31, 14);
             this.label4.TabIndex = 3;
             this.label4.Text = "Stok";
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 60F;
-            this.Column1.HeaderText = "Kode";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 320F;
-            this.Column2.HeaderText = "Nama Barang";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Jenis";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Satuan";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Stok Awal";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Strip (Box)";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            this.Column17.Visible = false;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Tab (Strip)";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Visible = false;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Box";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Lempeng";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "Butir";
-            this.Column20.Name = "Column20";
-            this.Column20.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.FillWeight = 150F;
-            this.Column10.HeaderText = "Stok Akhir";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 130F;
-            this.Column7.HeaderText = "Total Harga";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 170F;
-            this.Column8.HeaderText = "Distributor";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 110F;
-            this.Column9.HeaderText = "Explayerd";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 120F;
-            this.Column5.HeaderText = "HB";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.FillWeight = 120F;
-            this.Column11.HeaderText = "HJ 1";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.FillWeight = 120F;
-            this.Column13.HeaderText = "HJ 2";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.FillWeight = 120F;
-            this.Column15.HeaderText = "HJ 3";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "HJ 4";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Visible = false;
             // 
             // FrmMaster
             // 
@@ -1249,16 +1169,12 @@ namespace Apotek
         private Guna.UI2.WinForms.Guna2NumericUpDown LEMPENGBOX;
         private Guna.UI2.WinForms.Guna2NumericUpDown JUMLAHBARANG;
         private Guna.UI2.WinForms.Guna2DateTimePicker EXPLAYERD;
-        private Guna.UI2.WinForms.Guna2ComboBox SATUANBARANG;
-        private Guna.UI2.WinForms.Guna2ComboBox JENISBARANG;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblStrip2;
         private System.Windows.Forms.Label lblStrip1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox TOTALHARGA;
         private Guna.UI2.WinForms.Guna2TextBox DISTRIBUTOR;
         private System.Windows.Forms.GroupBox gBstok;
@@ -1270,8 +1186,6 @@ namespace Apotek
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
