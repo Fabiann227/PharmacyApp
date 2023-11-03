@@ -393,6 +393,26 @@
             </summary>
             <returns>A byte array that contains the results of the XOR operation.</returns>
         </member>
+        <member name="M:MySql.Data.MySqlClient.Authentication.WebAuthnAuthenticationPlugin.ParseChallenge(System.Byte[])">
+            <summary>
+            Method that parse the challenge received from server during authentication process.
+            This method extracts salt and relying party name.
+            </summary>
+            <param name="data">Buffer holding the server challenge.</param>
+            <exception cref="T:MySql.Data.MySqlClient.MySqlException">Thrown if an error occurs while parsing the challenge.</exception>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.Authentication.WebAuthnAuthenticationPlugin.SetClientData">
+            <summary>
+            Sets the ClientDataHash for the assertion
+            </summary>
+        </member>
+        <member name="M:MySql.Data.MySqlClient.Authentication.WebAuthnAuthenticationPlugin.GetAssertion(MySql.Data.Authentication.FIDO.FidoDevice)">
+            <summary>
+            Method to obtains an assertion from a FIDO device.
+            </summary>
+            <returns>The assertion.</returns>
+            <exception cref="T:MySql.Data.MySqlClient.MySqlException">Thrown if an error occurs while getting the assertion.</exception>
+        </member>
         <member name="T:MySql.Data.MySqlClient.Authentication.MySqlWindowsAuthenticationPlugin">
             <summary>
             Allows connections to a user account set with the authentication_windows authentication plugin.
@@ -3091,6 +3111,11 @@
             Occurs when FIDO authentication requests to perform gesture action on a device.
             </summary>
         </member>
+        <member name="E:MySql.Data.MySqlClient.MySqlConnection.WebAuthnActionRequested">
+            <summary>
+            Occurs when WebAuthn authentication makes a request to perform the gesture action on a device.
+            </summary>
+        </member>
         <member name="E:MySql.Data.MySqlClient.MySqlConnection.InfoMessage">
             <summary>
             Occurs when MySQL returns warnings as a result of executing a command or query.
@@ -3507,6 +3532,12 @@
             <see cref="T:MySql.Data.MySqlClient.MySqlConnection"/>
             </summary>
         </member>
+        <member name="T:MySql.Data.MySqlClient.WebAuthnActionCallback">
+            <summary>
+            Represents the method to handle the <see cref="E:MySql.Data.MySqlClient.MySqlConnection.WebAuthnActionRequested"/> event of a 
+            <see cref="T:MySql.Data.MySqlClient.MySqlConnection"/>.
+            </summary>
+        </member>
         <member name="T:MySql.Data.MySqlClient.MySqlInfoMessageEventHandler">
             <summary>
             Represents the method to handle the <see cref="E:MySql.Data.MySqlClient.MySqlConnection.InfoMessage"/> event of a 
@@ -3790,7 +3821,12 @@
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.FidoActionRequested">
             <summary>
-            Gets or sets the event for the callback.
+            Gets or sets the event for the Fido callback.
+            </summary>
+        </member>
+        <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.WebAuthnActionRequested">
+            <summary>
+            Gets or sets the event for the WebauthN callback.
             </summary>
         </member>
         <member name="P:MySql.Data.MySqlClient.MySqlConnectionStringBuilder.ConnectionLifeTime">
@@ -8990,6 +9026,13 @@
             <param name="quotedString">The string to unquote.</param>
             <returns></returns>
         </member>
+        <member name="M:MySql.Data.MySqlClient.Utils.GetLengthSize(System.UInt64)">
+            <summary>
+            Gets the length size (in bytes) of a string.
+            </summary>
+            <param name="length">length of string.</param>
+            <returns>Number of bytes needed.</returns>
+        </member>
         <member name="T:MySql.Data.MySqlClient.X.XDevAPI.Common.ColumnType">
             <summary>
             Defines the type of the column.
@@ -9070,12 +9113,19 @@
             </summary>
             <param name="assert">The object to use</param>
         </member>
-        <member name="M:MySql.Data.Authentication.FIDO.FidoAssertion.GetFidoAssertionStatement">
+        <member name="M:MySql.Data.Authentication.FIDO.FidoAssertion.GetFidoAssertionStatement(System.Int32)">
             <summary>
-            Gets the assertion statement. Since we're getting only one assertion, the index will always be zero.
+            Gets the assertion statement at the index provided.
             </summary>
+            <param name="idx">The index of the assertion statement to retrieve</param>
             <returns>The assertion statement object</returns>
             <exception cref="T:System.IndexOutOfRangeException">The index is not in the range [0, count)</exception>
+        </member>
+        <member name="M:MySql.Data.Authentication.FIDO.FidoAssertion.GetAssertCount">
+            <summary>
+            Gets the number of assertions contained in the authentication device.
+            </summary>
+            <returns>The number of assertions contained in the authentication device.</returns>
         </member>
         <member name="M:MySql.Data.Authentication.FIDO.FidoDevice.#ctor">
             <summary>
@@ -9100,6 +9150,11 @@
             Closes the device, preventing further use
             </summary>
             <exception cref="T:MySql.Data.Authentication.FIDO.Utility.CtapException">Thrown if an error occurs while closing</exception>
+        </member>
+        <member name="P:MySql.Data.Authentication.FIDO.FidoDevice.SupportsCredman">
+            <summary>
+            Determines whether this device supports CTAP 2.1 Credential Management.
+            </summary>
         </member>
         <member name="M:MySql.Data.Authentication.FIDO.FidoDevice.GetAssert(MySql.Data.Authentication.FIDO.FidoAssertion)">
             <summary>
@@ -9202,6 +9257,13 @@
             <param name="assert">The assert to use for generation</param>
             <param name="pin">The pin of the device</param>
             <returns><see cref="F:MySql.Data.Authentication.FIDO.Utility.CtapStatus.Ok"/> on success, anything else on failure</returns>
+        </member>
+        <member name="M:MySql.Data.Authentication.FIDO.Native.NativeMethods.fido_dev_supports_credman(MySql.Data.Authentication.FIDO.Native.fido_dev_t*)">
+            <summary>
+            Returns <see langword="true"/> if <paramref name="dev"/> supports CTAP 2.1 Credential Management.
+            </summary>
+            <param name="dev">The device to check.</param>
+            <returns><see langword="true"/> if <paramref name="dev"/> supports CTAP 2.1 Credential Management; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:MySql.Data.Authentication.FIDO.Native.NativeMethods.fido_dev_info_new(System.IntPtr)">
             <summary>
@@ -9356,11 +9418,32 @@
         </member>
         <member name="M:MySql.Data.Authentication.FIDO.Native.NativeMethods.fido_assert_id_ptr(MySql.Data.Authentication.FIDO.Native.fido_assert_t*,System.IntPtr)">
             <summary>
-            Returns a pointer to the ID of statement idx in assert
+            Returns a pointer to the ID of statement idx in assert.
             </summary>
-            <param name="assert">The assertion object to act on</param>
-            <param name="idx">The index to retrieve</param>
-            <returns>A pointer to the ID of statement idx in assert</returns>
+            <param name="assert">The assertion object to act on.</param>
+            <param name="idx">The index to retrieve.</param>
+            <returns>A pointer to the ID of statement idx in assert.</returns>
+        </member>
+        <member name="M:MySql.Data.Authentication.FIDO.Native.NativeMethods.fido_assert_clientdata_hash_len(MySql.Data.Authentication.FIDO.Native.fido_assert_t*)">
+            <summary>
+            Returns the length of the client data hash of an assertion.
+            </summary>
+            <param name="assert">The assertion object to act on.</param>
+            <returns>The length of the client data hash of statement idx of the assertion.</returns>
+        </member>
+        <member name="M:MySql.Data.Authentication.FIDO.Native.NativeMethods.fido_assert_clientdata_hash_ptr(MySql.Data.Authentication.FIDO.Native.fido_assert_t*)">
+            <summary>
+            Returns a pointer to the client data hash of an assertion.
+            </summary>
+            <param name="assert">The assertion object to act on.</param>
+            <returns>A pointer to the client data hash of the assertion.</returns>
+        </member>
+        <member name="M:MySql.Data.Authentication.FIDO.Native.NativeMethods.fido_assert_count(MySql.Data.Authentication.FIDO.Native.fido_assert_t*)">
+            <summary>
+            Returns the number of statements in assertion.
+            </summary>
+            <param name="assert">The assertion object to act on.</param>
+            <returns>The number of statements in assertion.</returns>
         </member>
         <member name="T:MySql.Data.Authentication.FIDO.Native.fido_assert_t">
             <summary>
@@ -10937,6 +11020,11 @@
             Defines the supported TLS protocols.
             </summary>
         </member>
+        <member name="M:MySql.Data.Common.Ssl.GetCertificateFromPEM(System.String,System.String)">
+            <summary>
+            Retrieves a certificate from PEM file.
+            </summary>
+        </member>
         <member name="M:MySql.Data.Common.Ssl.GetPFXClientCertificates">
             <summary>
             Retrieves a collection containing the client SSL PFX certificates.
@@ -11479,6 +11567,21 @@
         <member name="P:MySql.Data.Resources.FatalErrorReadingResult">
             <summary>
               Looks up a localized string similar to Fatal error encountered attempting to read the resultset..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.Resources.FidoChallengeCorrupt">
+            <summary>
+              Looks up a localized string similar to Challenge received is corrupt..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.Resources.FidoMissingHandler">
+            <summary>
+              Looks up a localized string similar to An event handler for FidoActionRequested was not specified..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.Resources.FidoRegistrationMissing">
+            <summary>
+              Looks up a localized string similar to FIDO registration is missing..
             </summary>
         </member>
         <member name="P:MySql.Data.Resources.FileBasedCertificateNotSupported">
@@ -12204,6 +12307,16 @@
         <member name="P:MySql.Data.Resources.ValueNotSupportedForGuid">
             <summary>
               Looks up a localized string similar to The requested column value could not be treated as or conveted to a Guid..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.Resources.WebAuthnMissingHandler">
+            <summary>
+              Looks up a localized string similar to An event handler for WebAuthnActionRequested was not specified..
+            </summary>
+        </member>
+        <member name="P:MySql.Data.Resources.WebAuthnTimeout">
+            <summary>
+              Looks up a localized string similar to The timeout of 15 seconds for user interaction with FIDO device has been exceeded..
             </summary>
         </member>
         <member name="P:MySql.Data.Resources.WinAuthNotSupportOnPlatform">

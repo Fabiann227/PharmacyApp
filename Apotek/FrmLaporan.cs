@@ -250,7 +250,7 @@ namespace Apotek
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Terjadi kesalahan 1: " + ex.Message);
+                        MessageBox.Show("Terjadi kesalahan 1 | Laporan: " + ex.Message);
                     }
                 }
             }
