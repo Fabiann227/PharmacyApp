@@ -118,9 +118,8 @@ namespace Apotek
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(283, 902);
+            this.panel1.Size = new System.Drawing.Size(212, 609);
             this.panel1.TabIndex = 0;
             // 
             // btnSupplier
@@ -132,11 +131,10 @@ namespace Apotek
             this.btnSupplier.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnSupplier.Image = global::Apotek.Properties.Resources.icons8_pharmacist_24px;
             this.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSupplier.Location = new System.Drawing.Point(0, 416);
-            this.btnSupplier.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSupplier.Location = new System.Drawing.Point(0, 338);
             this.btnSupplier.Name = "btnSupplier";
-            this.btnSupplier.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSupplier.Size = new System.Drawing.Size(283, 48);
+            this.btnSupplier.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnSupplier.Size = new System.Drawing.Size(212, 39);
             this.btnSupplier.TabIndex = 10;
             this.btnSupplier.Text = "    Data Pelanggan";
             this.btnSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,11 +151,10 @@ namespace Apotek
             this.btnLaporanStock.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnLaporanStock.Image = global::Apotek.Properties.Resources.icons8_treatment_plan_24px;
             this.btnLaporanStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLaporanStock.Location = new System.Drawing.Point(0, 368);
-            this.btnLaporanStock.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLaporanStock.Location = new System.Drawing.Point(0, 299);
             this.btnLaporanStock.Name = "btnLaporanStock";
-            this.btnLaporanStock.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnLaporanStock.Size = new System.Drawing.Size(283, 48);
+            this.btnLaporanStock.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnLaporanStock.Size = new System.Drawing.Size(212, 39);
             this.btnLaporanStock.TabIndex = 8;
             this.btnLaporanStock.Text = "    Laporan Stock";
             this.btnLaporanStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,11 +171,10 @@ namespace Apotek
             this.btnlaporan.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnlaporan.Image = global::Apotek.Properties.Resources.dashboard;
             this.btnlaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnlaporan.Location = new System.Drawing.Point(0, 320);
-            this.btnlaporan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnlaporan.Location = new System.Drawing.Point(0, 260);
             this.btnlaporan.Name = "btnlaporan";
-            this.btnlaporan.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnlaporan.Size = new System.Drawing.Size(283, 48);
+            this.btnlaporan.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnlaporan.Size = new System.Drawing.Size(212, 39);
             this.btnlaporan.TabIndex = 7;
             this.btnlaporan.Text = "    Laporan Penjualan";
             this.btnlaporan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,11 +191,10 @@ namespace Apotek
             this.btnRetur.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnRetur.Image = global::Apotek.Properties.Resources.icons8_undo_24px;
             this.btnRetur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRetur.Location = new System.Drawing.Point(0, 272);
-            this.btnRetur.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRetur.Location = new System.Drawing.Point(0, 221);
             this.btnRetur.Name = "btnRetur";
-            this.btnRetur.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnRetur.Size = new System.Drawing.Size(283, 48);
+            this.btnRetur.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnRetur.Size = new System.Drawing.Size(212, 39);
             this.btnRetur.TabIndex = 5;
             this.btnRetur.Text = "    Retur Penjualan";
             this.btnRetur.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -210,10 +205,9 @@ namespace Apotek
             // activeSideBar
             // 
             this.activeSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.activeSideBar.Location = new System.Drawing.Point(-1, 135);
-            this.activeSideBar.Margin = new System.Windows.Forms.Padding(4);
+            this.activeSideBar.Location = new System.Drawing.Point(-1, 110);
             this.activeSideBar.Name = "activeSideBar";
-            this.activeSideBar.Size = new System.Drawing.Size(11, 48);
+            this.activeSideBar.Size = new System.Drawing.Size(8, 39);
             this.activeSideBar.TabIndex = 4;
             // 
             // btnFaktur
@@ -225,11 +219,10 @@ namespace Apotek
             this.btnFaktur.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnFaktur.Image = global::Apotek.Properties.Resources.icons8_pills_24px;
             this.btnFaktur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFaktur.Location = new System.Drawing.Point(0, 224);
-            this.btnFaktur.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFaktur.Location = new System.Drawing.Point(0, 182);
             this.btnFaktur.Name = "btnFaktur";
-            this.btnFaktur.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnFaktur.Size = new System.Drawing.Size(283, 48);
+            this.btnFaktur.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnFaktur.Size = new System.Drawing.Size(212, 39);
             this.btnFaktur.TabIndex = 3;
             this.btnFaktur.Text = "    Barang Keluar";
             this.btnFaktur.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,11 +239,10 @@ namespace Apotek
             this.btnMaster.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnMaster.Image = global::Apotek.Properties.Resources.icons8_add_shopping_cart_24px;
             this.btnMaster.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaster.Location = new System.Drawing.Point(0, 176);
-            this.btnMaster.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaster.Location = new System.Drawing.Point(0, 143);
             this.btnMaster.Name = "btnMaster";
-            this.btnMaster.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnMaster.Size = new System.Drawing.Size(283, 48);
+            this.btnMaster.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMaster.Size = new System.Drawing.Size(212, 39);
             this.btnMaster.TabIndex = 2;
             this.btnMaster.Text = "    Barang Masuk";
             this.btnMaster.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -267,11 +259,10 @@ namespace Apotek
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = global::Apotek.Properties.Resources.home;
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 128);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 104);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(283, 48);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(212, 39);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "    Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -285,27 +276,24 @@ namespace Apotek
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(283, 128);
+            this.panel3.Size = new System.Drawing.Size(212, 104);
             this.panel3.TabIndex = 0;
             // 
             // guna2Separator1
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2Separator1.Location = new System.Drawing.Point(27, 108);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Separator1.Location = new System.Drawing.Point(20, 88);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(231, 12);
+            this.guna2Separator1.Size = new System.Drawing.Size(173, 10);
             this.guna2Separator1.TabIndex = 6;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Apotek.Properties.Resources.pharmacy__3_;
-            this.pictureBox1.Location = new System.Drawing.Point(92, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(69, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(81, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -315,10 +303,9 @@ namespace Apotek
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(67, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(50, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 21);
+            this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Dimas";
             // 
@@ -327,10 +314,9 @@ namespace Apotek
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(8, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 21);
+            this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Apotek";
             // 
@@ -345,10 +331,9 @@ namespace Apotek
             this.panel2.Controls.Add(this.guna2ImageButton2);
             this.panel2.Controls.Add(this.guna2ImageButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(283, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(212, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1541, 43);
+            this.panel2.Size = new System.Drawing.Size(816, 35);
             this.panel2.TabIndex = 1;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -358,20 +343,18 @@ namespace Apotek
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.DimGray;
-            this.label21.Location = new System.Drawing.Point(1343, 11);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Location = new System.Drawing.Point(576, 9);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 21);
+            this.label21.Size = new System.Drawing.Size(123, 16);
             this.label21.TabIndex = 8;
-            this.label21.Text = "V 2.9";
+            this.label21.Text = "Kasir Belakang | 5.0";
             // 
             // guna2VSeparator1
             // 
             this.guna2VSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2VSeparator1.Location = new System.Drawing.Point(1433, 5);
-            this.guna2VSeparator1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2VSeparator1.Location = new System.Drawing.Point(735, 4);
             this.guna2VSeparator1.Name = "guna2VSeparator1";
-            this.guna2VSeparator1.Size = new System.Drawing.Size(13, 31);
+            this.guna2VSeparator1.Size = new System.Drawing.Size(10, 25);
             this.guna2VSeparator1.TabIndex = 7;
             // 
             // guna2ImageButton3
@@ -383,11 +366,10 @@ namespace Apotek
             this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton3.ImageRotate = 0F;
             this.guna2ImageButton3.ImageSize = new System.Drawing.Size(26, 26);
-            this.guna2ImageButton3.Location = new System.Drawing.Point(1387, 0);
-            this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(700, 0);
             this.guna2ImageButton3.Name = "guna2ImageButton3";
             this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton3.Size = new System.Drawing.Size(49, 42);
+            this.guna2ImageButton3.Size = new System.Drawing.Size(37, 34);
             this.guna2ImageButton3.TabIndex = 6;
             // 
             // guna2ImageButton2
@@ -399,11 +381,10 @@ namespace Apotek
             this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton2.ImageRotate = 0F;
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(24, 24);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(1447, 0);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(745, 0);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(49, 42);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(37, 34);
             this.guna2ImageButton2.TabIndex = 6;
             this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
@@ -416,11 +397,10 @@ namespace Apotek
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(24, 24);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(1488, 0);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(776, 0);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(49, 42);
+            this.guna2ImageButton1.Size = new System.Drawing.Size(37, 34);
             this.guna2ImageButton1.TabIndex = 3;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
@@ -428,10 +408,9 @@ namespace Apotek
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(227, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 31);
+            this.label1.Size = new System.Drawing.Size(117, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Dashboard";
             // 
@@ -439,10 +418,9 @@ namespace Apotek
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(303, 119);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(227, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(180, 21);
+            this.label4.Size = new System.Drawing.Size(136, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "- Ringkasan Penjualan";
             // 
@@ -452,20 +430,18 @@ namespace Apotek
             this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox2);
             this.guna2CustomGradientPanel1.Controls.Add(this.label7);
             this.guna2CustomGradientPanel1.Controls.Add(this.lbl_PENJUALAN);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(309, 160);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(232, 130);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(479, 123);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(359, 100);
             this.guna2CustomGradientPanel1.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::Apotek.Properties.Resources.icons8_Cash_Register_84px_1;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(145, 107);
+            this.pictureBox2.Size = new System.Drawing.Size(109, 87);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -475,10 +451,9 @@ namespace Apotek
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(148, 27);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(111, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 21);
+            this.label7.Size = new System.Drawing.Size(94, 16);
             this.label7.TabIndex = 2;
             this.label7.Text = "Total Penjualan";
             // 
@@ -487,10 +462,9 @@ namespace Apotek
             this.lbl_PENJUALAN.AutoSize = true;
             this.lbl_PENJUALAN.BackColor = System.Drawing.Color.White;
             this.lbl_PENJUALAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PENJUALAN.Location = new System.Drawing.Point(145, 54);
-            this.lbl_PENJUALAN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_PENJUALAN.Location = new System.Drawing.Point(109, 44);
             this.lbl_PENJUALAN.Name = "lbl_PENJUALAN";
-            this.lbl_PENJUALAN.Size = new System.Drawing.Size(223, 31);
+            this.lbl_PENJUALAN.Size = new System.Drawing.Size(177, 25);
             this.lbl_PENJUALAN.TabIndex = 2;
             this.lbl_PENJUALAN.Text = "Rp. 6.750.000,00";
             // 
@@ -500,10 +474,9 @@ namespace Apotek
             this.guna2CustomGradientPanel2.Controls.Add(this.pictureBox4);
             this.guna2CustomGradientPanel2.Controls.Add(this.label11);
             this.guna2CustomGradientPanel2.Controls.Add(this.label12);
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(1296, 160);
-            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(972, 130);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(479, 123);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(359, 100);
             this.guna2CustomGradientPanel2.TabIndex = 3;
             this.guna2CustomGradientPanel2.Visible = false;
             // 
@@ -511,10 +484,9 @@ namespace Apotek
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::Apotek.Properties.Resources.icons8_coins_84px;
-            this.pictureBox4.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(145, 107);
+            this.pictureBox4.Size = new System.Drawing.Size(109, 87);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
@@ -524,10 +496,9 @@ namespace Apotek
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(148, 27);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(111, 22);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 21);
+            this.label11.Size = new System.Drawing.Size(99, 16);
             this.label11.TabIndex = 4;
             this.label11.Text = "Retur Penjualan";
             // 
@@ -536,10 +507,9 @@ namespace Apotek
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(145, 54);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(109, 44);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(223, 31);
+            this.label12.Size = new System.Drawing.Size(177, 25);
             this.label12.TabIndex = 5;
             this.label12.Text = "Rp. 6.750.000,00";
             // 
@@ -549,10 +519,9 @@ namespace Apotek
             this.guna2CustomGradientPanel3.Controls.Add(this.pictureBox3);
             this.guna2CustomGradientPanel3.Controls.Add(this.label9);
             this.guna2CustomGradientPanel3.Controls.Add(this.label10);
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(804, 160);
-            this.guna2CustomGradientPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(603, 130);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(479, 123);
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(359, 100);
             this.guna2CustomGradientPanel3.TabIndex = 3;
             this.guna2CustomGradientPanel3.Visible = false;
             // 
@@ -560,10 +529,9 @@ namespace Apotek
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::Apotek.Properties.Resources.icons8_Receive_Cash_84px;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(145, 107);
+            this.pictureBox3.Size = new System.Drawing.Size(109, 87);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -573,10 +541,9 @@ namespace Apotek
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(148, 27);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(111, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 21);
+            this.label9.Size = new System.Drawing.Size(106, 16);
             this.label9.TabIndex = 4;
             this.label9.Text = "Total Keuntungan";
             // 
@@ -585,10 +552,9 @@ namespace Apotek
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(145, 54);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(109, 44);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(223, 31);
+            this.label10.Size = new System.Drawing.Size(177, 25);
             this.label10.TabIndex = 5;
             this.label10.Text = "Rp. 6.750.000,00";
             // 
@@ -598,10 +564,9 @@ namespace Apotek
             this.guna2CustomGradientPanel7.Controls.Add(this.guna2CustomGradientPanel10);
             this.guna2CustomGradientPanel7.Controls.Add(this.label16);
             this.guna2CustomGradientPanel7.Controls.Add(this.lbl_STOKMIN);
-            this.guna2CustomGradientPanel7.Location = new System.Drawing.Point(309, 358);
-            this.guna2CustomGradientPanel7.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel7.Location = new System.Drawing.Point(232, 291);
             this.guna2CustomGradientPanel7.Name = "guna2CustomGradientPanel7";
-            this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(479, 197);
+            this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(359, 160);
             this.guna2CustomGradientPanel7.TabIndex = 3;
             // 
             // guna2CustomGradientPanel10
@@ -612,20 +577,18 @@ namespace Apotek
             this.guna2CustomGradientPanel10.FillColor = System.Drawing.Color.Wheat;
             this.guna2CustomGradientPanel10.FillColor2 = System.Drawing.Color.Moccasin;
             this.guna2CustomGradientPanel10.FillColor3 = System.Drawing.Color.PapayaWhip;
-            this.guna2CustomGradientPanel10.Location = new System.Drawing.Point(17, 17);
-            this.guna2CustomGradientPanel10.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel10.Location = new System.Drawing.Point(13, 14);
             this.guna2CustomGradientPanel10.Name = "guna2CustomGradientPanel10";
-            this.guna2CustomGradientPanel10.Size = new System.Drawing.Size(437, 42);
+            this.guna2CustomGradientPanel10.Size = new System.Drawing.Size(328, 34);
             this.guna2CustomGradientPanel10.TabIndex = 3;
             // 
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(16, 11);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(12, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(141, 20);
+            this.label13.Size = new System.Drawing.Size(106, 16);
             this.label13.TabIndex = 2;
             this.label13.Text = "Stok Negatif";
             // 
@@ -633,10 +596,9 @@ namespace Apotek
             // 
             this.label16.BackColor = System.Drawing.Color.White;
             this.label16.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(17, 137);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(13, 111);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(437, 41);
+            this.label16.Size = new System.Drawing.Size(328, 33);
             this.label16.TabIndex = 2;
             this.label16.Text = "Produk";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -645,10 +607,9 @@ namespace Apotek
             // 
             this.lbl_STOKMIN.BackColor = System.Drawing.Color.White;
             this.lbl_STOKMIN.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_STOKMIN.Location = new System.Drawing.Point(17, 84);
-            this.lbl_STOKMIN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_STOKMIN.Location = new System.Drawing.Point(13, 68);
             this.lbl_STOKMIN.Name = "lbl_STOKMIN";
-            this.lbl_STOKMIN.Size = new System.Drawing.Size(437, 53);
+            this.lbl_STOKMIN.Size = new System.Drawing.Size(328, 43);
             this.lbl_STOKMIN.TabIndex = 2;
             this.lbl_STOKMIN.Text = "-";
             this.lbl_STOKMIN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -657,10 +618,9 @@ namespace Apotek
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(305, 314);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(229, 255);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 21);
+            this.label6.Size = new System.Drawing.Size(122, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "- Status Persediaan";
             // 
@@ -670,10 +630,9 @@ namespace Apotek
             this.guna2CustomGradientPanel8.Controls.Add(this.label17);
             this.guna2CustomGradientPanel8.Controls.Add(this.label18);
             this.guna2CustomGradientPanel8.Controls.Add(this.guna2CustomGradientPanel11);
-            this.guna2CustomGradientPanel8.Location = new System.Drawing.Point(804, 358);
-            this.guna2CustomGradientPanel8.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel8.Location = new System.Drawing.Point(603, 291);
             this.guna2CustomGradientPanel8.Name = "guna2CustomGradientPanel8";
-            this.guna2CustomGradientPanel8.Size = new System.Drawing.Size(479, 197);
+            this.guna2CustomGradientPanel8.Size = new System.Drawing.Size(359, 160);
             this.guna2CustomGradientPanel8.TabIndex = 3;
             this.guna2CustomGradientPanel8.Visible = false;
             // 
@@ -681,10 +640,9 @@ namespace Apotek
             // 
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(21, 137);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(16, 111);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(437, 41);
+            this.label17.Size = new System.Drawing.Size(328, 33);
             this.label17.TabIndex = 5;
             this.label17.Text = "Produk";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -693,10 +651,9 @@ namespace Apotek
             // 
             this.label18.BackColor = System.Drawing.Color.White;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(21, 84);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(16, 68);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(437, 53);
+            this.label18.Size = new System.Drawing.Size(328, 43);
             this.label18.TabIndex = 6;
             this.label18.Text = "13";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -709,20 +666,18 @@ namespace Apotek
             this.guna2CustomGradientPanel11.FillColor = System.Drawing.Color.Wheat;
             this.guna2CustomGradientPanel11.FillColor2 = System.Drawing.Color.Moccasin;
             this.guna2CustomGradientPanel11.FillColor3 = System.Drawing.Color.PapayaWhip;
-            this.guna2CustomGradientPanel11.Location = new System.Drawing.Point(21, 17);
-            this.guna2CustomGradientPanel11.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel11.Location = new System.Drawing.Point(16, 14);
             this.guna2CustomGradientPanel11.Name = "guna2CustomGradientPanel11";
-            this.guna2CustomGradientPanel11.Size = new System.Drawing.Size(437, 42);
+            this.guna2CustomGradientPanel11.Size = new System.Drawing.Size(328, 34);
             this.guna2CustomGradientPanel11.TabIndex = 4;
             // 
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(17, 11);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(13, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(215, 20);
+            this.label14.Size = new System.Drawing.Size(161, 16);
             this.label14.TabIndex = 3;
             this.label14.Text = "Dekat Kadaluarsa";
             // 
@@ -732,10 +687,9 @@ namespace Apotek
             this.guna2CustomGradientPanel9.Controls.Add(this.label19);
             this.guna2CustomGradientPanel9.Controls.Add(this.label20);
             this.guna2CustomGradientPanel9.Controls.Add(this.guna2CustomGradientPanel12);
-            this.guna2CustomGradientPanel9.Location = new System.Drawing.Point(1296, 358);
-            this.guna2CustomGradientPanel9.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel9.Location = new System.Drawing.Point(972, 291);
             this.guna2CustomGradientPanel9.Name = "guna2CustomGradientPanel9";
-            this.guna2CustomGradientPanel9.Size = new System.Drawing.Size(479, 197);
+            this.guna2CustomGradientPanel9.Size = new System.Drawing.Size(359, 160);
             this.guna2CustomGradientPanel9.TabIndex = 3;
             this.guna2CustomGradientPanel9.Visible = false;
             // 
@@ -743,10 +697,9 @@ namespace Apotek
             // 
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(23, 137);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Location = new System.Drawing.Point(17, 111);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(437, 41);
+            this.label19.Size = new System.Drawing.Size(328, 33);
             this.label19.TabIndex = 5;
             this.label19.Text = "Produk";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -755,10 +708,9 @@ namespace Apotek
             // 
             this.label20.BackColor = System.Drawing.Color.White;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(23, 84);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(17, 68);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(437, 53);
+            this.label20.Size = new System.Drawing.Size(328, 43);
             this.label20.TabIndex = 6;
             this.label20.Text = "13";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -771,20 +723,18 @@ namespace Apotek
             this.guna2CustomGradientPanel12.FillColor = System.Drawing.Color.Wheat;
             this.guna2CustomGradientPanel12.FillColor2 = System.Drawing.Color.Moccasin;
             this.guna2CustomGradientPanel12.FillColor3 = System.Drawing.Color.PapayaWhip;
-            this.guna2CustomGradientPanel12.Location = new System.Drawing.Point(23, 17);
-            this.guna2CustomGradientPanel12.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel12.Location = new System.Drawing.Point(17, 14);
             this.guna2CustomGradientPanel12.Name = "guna2CustomGradientPanel12";
-            this.guna2CustomGradientPanel12.Size = new System.Drawing.Size(437, 42);
+            this.guna2CustomGradientPanel12.Size = new System.Drawing.Size(328, 34);
             this.guna2CustomGradientPanel12.TabIndex = 4;
             // 
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(20, 11);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(15, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(215, 20);
+            this.label15.Size = new System.Drawing.Size(161, 16);
             this.label15.TabIndex = 4;
             this.label15.Text = "Sudah Kadaluarsa";
             // 
@@ -795,10 +745,9 @@ namespace Apotek
             this.guna2CustomGradientPanel5.Controls.Add(this.btnTahun);
             this.guna2CustomGradientPanel5.Controls.Add(this.btnBulan);
             this.guna2CustomGradientPanel5.Controls.Add(this.btnHari);
-            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(847, 79);
-            this.guna2CustomGradientPanel5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(635, 64);
             this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(299, 46);
+            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(224, 37);
             this.guna2CustomGradientPanel5.TabIndex = 6;
             this.guna2CustomGradientPanel5.Visible = false;
             // 
@@ -813,10 +762,9 @@ namespace Apotek
             this.btnTahun.FillColor = System.Drawing.Color.White;
             this.btnTahun.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTahun.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnTahun.Location = new System.Drawing.Point(204, 4);
-            this.btnTahun.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTahun.Location = new System.Drawing.Point(153, 3);
             this.btnTahun.Name = "btnTahun";
-            this.btnTahun.Size = new System.Drawing.Size(91, 38);
+            this.btnTahun.Size = new System.Drawing.Size(68, 31);
             this.btnTahun.TabIndex = 0;
             this.btnTahun.Text = "Tahun";
             this.btnTahun.Click += new System.EventHandler(this.btnTahun_Click);
@@ -832,10 +780,9 @@ namespace Apotek
             this.btnBulan.FillColor = System.Drawing.Color.White;
             this.btnBulan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnBulan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBulan.Location = new System.Drawing.Point(104, 4);
-            this.btnBulan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBulan.Location = new System.Drawing.Point(78, 3);
             this.btnBulan.Name = "btnBulan";
-            this.btnBulan.Size = new System.Drawing.Size(97, 38);
+            this.btnBulan.Size = new System.Drawing.Size(73, 31);
             this.btnBulan.TabIndex = 0;
             this.btnBulan.Text = "Bulan";
             this.btnBulan.Click += new System.EventHandler(this.btnBulan_Click);
@@ -852,10 +799,9 @@ namespace Apotek
             this.btnHari.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnHari.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnHari.ForeColor = System.Drawing.Color.White;
-            this.btnHari.Location = new System.Drawing.Point(4, 4);
-            this.btnHari.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHari.Location = new System.Drawing.Point(3, 3);
             this.btnHari.Name = "btnHari";
-            this.btnHari.Size = new System.Drawing.Size(97, 38);
+            this.btnHari.Size = new System.Drawing.Size(73, 31);
             this.btnHari.TabIndex = 0;
             this.btnHari.Text = "Hari";
             this.btnHari.Click += new System.EventHandler(this.btnHari_Click);
@@ -866,12 +812,11 @@ namespace Apotek
             this.DatePicker.CustomFormat = "dd MMMM yyyy";
             this.DatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DatePicker.Location = new System.Drawing.Point(1564, 73);
-            this.DatePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.DatePicker.Location = new System.Drawing.Point(1173, 59);
             this.DatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(211, 37);
+            this.DatePicker.Size = new System.Drawing.Size(158, 30);
             this.DatePicker.TabIndex = 7;
             this.DatePicker.Value = new System.DateTime(2023, 9, 1, 11, 34, 0, 0);
             this.DatePicker.ValueChanged += new System.EventHandler(this.DatePicker_ValueChanged_1);
@@ -879,18 +824,17 @@ namespace Apotek
             // mainPanel
             // 
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(283, 43);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.mainPanel.Location = new System.Drawing.Point(212, 35);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1541, 859);
+            this.mainPanel.Size = new System.Drawing.Size(816, 574);
             this.mainPanel.TabIndex = 12;
             this.mainPanel.Visible = false;
             // 
             // FrmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1824, 902);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.DatePicker);
             this.Controls.Add(this.guna2CustomGradientPanel5);
@@ -905,8 +849,7 @@ namespace Apotek
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1390, 853);
+            this.MinimumSize = new System.Drawing.Size(1027, 597);
             this.Name = "FrmDashboard";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Globalization;
+using OfficeOpenXml.Table;
+using OfficeOpenXml;
+using System.IO;
 
 namespace Apotek
 {
@@ -141,7 +144,7 @@ namespace Apotek
                                 string harga_strip = hargalempeng.ToString("N0", new CultureInfo("id-ID"));
 
                                 Image editIcon = Properties.Resources.icons8_info_24px_1;
-
+                                namaBarang = namaBarang.ToUpper();
                                 // Menambahkan data ke DataGridView
                                 dgv.Rows.Add(kodeBarang, namaBarang, stokAwal, lempengbox, butirStrip, stokSatuan, stokLempeng, stokButir, stokAkhir, total_harga, distributor, explayerd, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, harga_strip, editIcon);
                             }
@@ -216,7 +219,7 @@ namespace Apotek
                                 string harga_strip = hargalempeng.ToString("N0", new CultureInfo("id-ID"));
 
                                 Image editIcon = Properties.Resources.icons8_info_24px_1;
-
+                                namaBarang = namaBarang.ToUpper();
                                 // Menambahkan data ke DataGridView
                                 dgv.Rows.Add(kodeBarang, namaBarang, stokAwal, lempengbox, butirStrip, stokSatuan, stokLempeng, stokButir, stokAkhir, total_harga, distributor, explayerd, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, harga_strip, editIcon);
                             }
@@ -492,6 +495,7 @@ namespace Apotek
                     HARGAJUAL2.Text = hargaJual2;
                     HARGAJUAL3.Text = hargaJual3;
                     LEMPENGBOX.Text = row.Cells["Column17"].Value.ToString();
+                    BUTIRBOX.Text = row.Cells["Column14"].Value.ToString();
                     HARGALEMPENG.Text = hargaJualLempeng;
                     //EXPLAYERD.Text = row.Cells["Column9"].Value.ToString();
                     stokSatuan.Text = row.Cells["Column16"].Value.ToString();
@@ -718,6 +722,73 @@ namespace Apotek
                         MessageBox.Show("" + ex.Message);
                     }
                 }
+            }
+        }
+
+        private void ExportToExcel(DataGridView dgv, string filePath)
+        {
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+            FileInfo excelFile = new FileInfo(filePath);
+
+            using (ExcelPackage package = new ExcelPackage(excelFile))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Data");
+
+                int colIndex = 1;
+
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    if (dgv.Columns[i].Visible)
+                    {
+                        worksheet.Cells[1, colIndex].Value = dgv.Columns[i].HeaderText;
+                        colIndex++;
+                    }
+                }
+
+                for (int row = 0; row < dgv.Rows.Count; row++)
+                {
+                    colIndex = 1;
+
+                    for (int col = 0; col < dgv.Columns.Count; col++)
+                    {
+                        if (dgv.Columns[col].Visible)
+                        {
+                            worksheet.Cells[row + 2, colIndex].Value = dgv.Rows[row].Cells[col].Value;
+                            colIndex++;
+                        }
+                    }
+                }
+
+                worksheet.Column(1).Width = 5;
+                worksheet.Column(2).Width = 10;
+                worksheet.Column(3).Width = 14;
+                worksheet.Column(4).Width = 35;
+                worksheet.Column(5).Width = 5;
+                worksheet.Column(6).Width = 12;
+                worksheet.Column(7).Width = 13;
+
+                // Membuat tabel dan menerapkan gaya tabel
+                var dataRange = worksheet.Cells["A1:" + worksheet.Cells[worksheet.Dimension.End.Row, worksheet.Dimension.End.Column].Address];
+                var tbl = worksheet.Tables.Add(dataRange, "MyTable");
+                tbl.TableStyle = TableStyles.Medium2;
+
+                package.Save();
+            }
+        }
+
+        private void Export_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Save as Excel File";
+            saveFileDialog.Filter = "Excel Files|*.xlsx";
+            saveFileDialog.DefaultExt = "xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                ExportToExcel(dgv, filePath);
+                MessageBox.Show("Data berhasil diekspor ke Excel.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

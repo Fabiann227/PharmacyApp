@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Globalization;
-using Microsoft.ReportingServices.Diagnostics.Internal;
-using MySqlX.XDevAPI.Relational;
 
 namespace Apotek
 {
@@ -20,6 +18,7 @@ namespace Apotek
         private string SelectedID;
         private string SelectedKode;
 
+        //tambah
         string harga_jual1;
         string harga_jual2;
         string harga_jual3;
@@ -27,6 +26,14 @@ namespace Apotek
         string kode_barang;
         string stokLempengBox;
         string stokBarang;
+
+        //edit
+        string e_harga_jual1;
+        string e_harga_jual2;
+        string e_harga_jual3;
+        string e_harga_jual4;
+        int currentStok = 0;
+        private bool isFirstCall = true;
 
         string server = DatabaseConfig.Instance.Server;
         string database = DatabaseConfig.Instance.DatabaseName;
@@ -326,8 +333,6 @@ namespace Apotek
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
 
-            Console.WriteLine("Butir2: " + jumlah);
-
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
@@ -353,17 +358,64 @@ namespace Apotek
                 DataGridViewRow row = this.dgv.Rows[e.RowIndex];
                 SelectedID = row.Cells["ID"].Value.ToString();
                 SelectedKode = row.Cells["KODE"].Value.ToString();
+                EDIT_LEVEL.Text = row.Cells["column2"].Value.ToString();
                 NAMABARANG.Text = row.Cells["column1"].Value.ToString();
-                HARGA.Text = row.Cells["column3"].Value.ToString();
-                DIBELI.Text = row.Cells["column4"].Value.ToString();
+                EDIT_HARGA.Text = row.Cells["column3"].Value.ToString();
+                
                 SUBTOTAL.Text = row.Cells["column6"].Value.ToString();
                 SATUAN.Text = row.Cells["column5"].Value.ToString();
                 decimal diRetur = Convert.ToDecimal(row.Cells["column8"].Value);
+                decimal diBeli = Convert.ToDecimal(row.Cells["column4"].Value);
 
-                DIRETUR.Maximum = (DIBELI.Value - diRetur);
+                DIRETUR.Maximum = (diBeli - diRetur);
+                DIBELI.Minimum = diBeli;
+                currentStok = Convert.ToInt32(row.Cells["column4"].Value.ToString());
+
+                DIBELI.Value = currentStok;
+                DITAMBAH.Value = 0;
                 DIRETUR.Enabled = true;
                 SUBRETUR.Enabled = true;
                 btnSave.Enabled = true;
+                lbl_NAMA.Enabled = true;
+                lbl_ALAMAT.Enabled = true;
+
+                //edit
+                string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT `harga_jual1`, `harga_jual2`, `harga_jual3`, `harga_lempeng` FROM `tb_barang_masuk` WHERE `kode_barang` = @kode_barang";
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@kode_barang", SelectedKode);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        decimal hargaJual1 = reader.GetDecimal(0);
+                        decimal hargaJual2 = reader.GetDecimal(1);
+                        decimal hargaJual3 = reader.GetDecimal(2);
+                        decimal hargaJual4 = reader.GetDecimal(3);
+                        
+                        e_harga_jual1 = hargaJual1.ToString("N0", new CultureInfo("id-ID"));
+                        e_harga_jual2 = hargaJual2.ToString("N0", new CultureInfo("id-ID"));
+                        e_harga_jual3 = hargaJual3.ToString("N0", new CultureInfo("id-ID"));
+                        e_harga_jual4 = hargaJual4.ToString("N0", new CultureInfo("id-ID"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kode Barang tidak ditemukan");
+                    }
+
+                    reader.Close();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan (FrmFaktur): " + ex.Message);
+                }
             }
         }
         private void HapusDataBarangKeluar(int kodeBarangToDelete)
@@ -415,7 +467,7 @@ namespace Apotek
         {
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
 
-            string harga = this.HARGA.Text;
+            string harga = this.EDIT_HARGA.Text;
             harga = harga.Replace(".", "");
             
             string subTotal = this.SUBTOTAL.Text;
@@ -425,11 +477,26 @@ namespace Apotek
             subRetur = subRetur.Replace(".", "");
 
             string query = "UPDATE `tb_barang_keluar` SET " +
-                    "`harga` = '" + harga + "', " +
-                    "`subtotal` = '" + subTotal + "', " +
-                    "`retur` = `retur` + '" + this.DIRETUR.Text + "', " +
-                    "`subretur` = `subretur` + '" + subRetur + "' " +
-                    "WHERE `id` = '" + SelectedID + "'";
+                            "`harga` = '" + harga + "', " +
+                            "`level_harga` = '" + EDIT_LEVEL.Text + "', ";
+
+                            if (SATUAN.Text == "Box")
+                            {
+                                query += "`qty` = '" + DIBELI.Value + "', ";
+                            }
+                            else if (SATUAN.Text == "Lempeng")
+                            {
+                                query += "`qty_lempeng` = '" + DIBELI.Value + "', ";
+                            }
+                            else if (SATUAN.Text == "Butir")
+                            {
+                                query += "`qty_butir` = '" + DIBELI.Value + "', ";
+                            }
+
+                            query += "`subtotal` = '" + subTotal + "', " +
+                            "`retur` = `retur` + '" + this.DIRETUR.Text + "', " +
+                            "`subretur` = `subretur` + '" + subRetur + "' " +
+                            "WHERE `id` = '" + SelectedID + "'";
 
             if (DIRETUR.Value != DIRETUR.Maximum)
             {
@@ -441,7 +508,7 @@ namespace Apotek
                         {
                             connection.Open();
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Berhasil Retur barang dengan Kode : " + SelectedID);
+                            RefreshCart();
                             connection.Close();
                         }
                         catch (Exception ex)
@@ -465,7 +532,7 @@ namespace Apotek
             int sisaLempeng = GetStokStrip(kodeBarang);
             int sisaButir = GetStokTablet(kodeBarang);
 
-            Console.WriteLine("Var: " + kodeBarang + " | " + retur + " | " + lempengPerBox);
+            Console.WriteLine("UpdateStokDeleted: " + kodeBarang + " | " + retur + " | " + lempengPerBox);
 
             if (SATUAN.Text == "Box")
             {
@@ -605,15 +672,123 @@ namespace Apotek
             }
         }
 
+        private void KurangiStok(string kodeBarang)
+        {
+            int lempengPerBox = GetLempengPerBox(kodeBarang);
+            int butirPerLempeng = GetButirPerLempeng(kodeBarang);
+            int sisaBox = GetStokSatuan(kodeBarang);
+            int sisaLempeng = GetStokStrip(kodeBarang);
+            int sisaButir = GetStokTablet(kodeBarang);
+
+            int tambah = int.Parse(DITAMBAH.Text);
+
+            Console.WriteLine("KurangiStok: " + kodeBarang + " | " + tambah + " | " + lempengPerBox);
+
+            if (SATUAN.Text == "Box")
+            {
+                // Mengurangkan stok untuk per satuan
+                if (sisaBox >= tambah)
+                {
+                    KurangiStok(kodeBarang, tambah);
+                }
+                else
+                {
+                    MessageBox.Show("Stok tidak cukup untuk barang dengan kode " + kodeBarang);
+                    return;
+                }
+            }
+
+            if (SATUAN.Text == "Strip")
+            {
+                //per strip
+                int sisaSetelahBeli = sisaLempeng - tambah;
+
+                Console.WriteLine("AL: " + sisaLempeng + " - " + tambah + " = " + sisaSetelahBeli);
+                if (sisaSetelahBeli < 0)
+                {
+                    if (sisaBox >= 1)
+                    {
+                        KurangiStok(kodeBarang, 1);
+                        sisaLempeng = lempengPerBox + sisaSetelahBeli;
+                        Console.WriteLine("BL: " + lempengPerBox + " + " + sisaSetelahBeli + " = " + sisaLempeng);
+                        KurangiStokLempeng(kodeBarang, sisaLempeng);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stok tidak cukup untuk barang dengan kode " + kodeBarang);
+                        return;
+                    }
+                }
+                else
+                {
+                    sisaLempeng = sisaSetelahBeli;
+                    KurangiStokLempeng(kodeBarang, sisaLempeng);
+                }
+            }
+
+            if (SATUAN.Text == "Tablet")
+            {
+                int sisaSetelahBeliButir = sisaButir - tambah;
+
+                Console.WriteLine("A: " + sisaButir + " - " + tambah + " = " + sisaSetelahBeliButir);
+                if (sisaSetelahBeliButir < 0)
+                {
+                    // Pengurangan stok butir
+                    sisaButir = butirPerLempeng + sisaSetelahBeliButir;
+                    Console.WriteLine("B: " + butirPerLempeng + " + " + sisaSetelahBeliButir + " = " + sisaButir);
+                    KurangiStokButir2(kodeBarang, Math.Abs(sisaButir));
+
+                    int sisaSetelahBeli = sisaLempeng - 1;
+
+                    if (sisaSetelahBeli < 0)
+                    {
+                        if (sisaBox >= 1)
+                        {
+                            KurangiStok(kodeBarang, 1);
+                            sisaLempeng = lempengPerBox + sisaSetelahBeli;
+                            KurangiStokLempeng(kodeBarang, sisaLempeng);
+                            Console.WriteLine("C: " + sisaLempeng);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Stok tidak cukup untuk barang dengan kode " + kodeBarang);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        sisaLempeng = sisaSetelahBeli;
+                        KurangiStokLempeng(kodeBarang, sisaLempeng);
+                        Console.WriteLine("D: " + sisaLempeng);
+                    }
+                }
+                else
+                {
+                    // Pengurangan stok butir
+                    sisaButir = sisaSetelahBeliButir;
+                    KurangiStokButir2(kodeBarang, sisaButir);
+                    Console.WriteLine("E: " + sisaButir);
+                }
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            UpdateStok(SelectedKode);
+            if (DIRETUR.Value > 0)
+            {
+                UpdateStok(SelectedKode);
+            }
+            else if (DITAMBAH.Value > 0)
+            {
+                KurangiStok(SelectedKode);
+            }
             updateData();
+            MessageBox.Show("Data Berhasil Diubah");
         }
 
         private void DIRETUR_ValueChanged(object sender, EventArgs e)
         {
-            string hargaText = HARGA.Text;
+            string hargaText = EDIT_HARGA.Text;
 
             int jumlahBarang = Convert.ToInt32(DIRETUR.Value);
 
@@ -629,7 +804,7 @@ namespace Apotek
 
         private void HARGA_TextChanged(object sender, EventArgs e)
         {
-            string hargaText = HARGA.Text;
+            string hargaText = EDIT_HARGA.Text;
 
             int jumlahBarang = Convert.ToInt32(DIBELI.Value);
 
@@ -1004,7 +1179,7 @@ namespace Apotek
 
                     if (reader.Read())
                     {
-                        TB_NAMABARANG.Text = reader["nama_barang"].ToString();
+                        TB_NAMABARANG.Text = reader["nama_barang"].ToString().ToUpper();
 
                         decimal hargaJual4 = reader.GetDecimal(3);
                         decimal hargaJual1 = reader.GetDecimal(4);
@@ -1196,6 +1371,99 @@ namespace Apotek
             }
 
             TB_SUBTOTAL.Text = totalHarga.ToString();
+        }
+
+        private void EDIT_LEVEL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedOption = EDIT_LEVEL.SelectedItem.ToString();
+
+            switch (selectedOption)
+            {
+                case "1":
+                    EDIT_HARGA.Text = e_harga_jual1;
+                    break;
+                case "2":
+                    EDIT_HARGA.Text = e_harga_jual2;
+                    break;
+                case "3":
+                    EDIT_HARGA.Text = e_harga_jual3;
+                    break;
+                case "4":
+                    EDIT_HARGA.Text = e_harga_jual4;
+                    break;
+                default:
+                    EDIT_HARGA.Text = "";
+                    break;
+            }
+        }
+
+        private void EDIT_HARGA_TextChanged(object sender, EventArgs e)
+        {
+            string hargaText = EDIT_HARGA.Text;
+
+            int jumlahBarang = Convert.ToInt32(DIBELI.Value);
+
+            decimal totalHarga = 0;
+
+            if (decimal.TryParse(hargaText, out decimal harga))
+            {
+                totalHarga = harga * jumlahBarang;
+            }
+
+            SUBTOTAL.Text = totalHarga.ToString();
+        }
+
+        private void DIBELI_ValueChanged(object sender, EventArgs e)
+        {
+            string hargaText = EDIT_HARGA.Text;
+
+            int jumlahBarang = Convert.ToInt32(DIBELI.Value);
+
+            decimal totalHarga = 0;
+
+            if (decimal.TryParse(hargaText, out decimal harga))
+            {
+                totalHarga = harga * jumlahBarang;
+            }
+
+            SUBTOTAL.Text = totalHarga.ToString();
+
+            if (isFirstCall)
+            {
+                isFirstCall = false;
+            }
+            else
+            {
+                DITAMBAH.Value = jumlahBarang - currentStok;
+            }
+        }
+
+        private void btnSaveNama_Click(object sender, EventArgs e)
+        {
+            string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
+            string query = "UPDATE `tb_barang_keluar` SET " +
+                "`nama_pelanggan` = '" + lbl_NAMA.Text + "', " +
+                "`alamat` = '" + lbl_ALAMAT.Text + "' " +
+                "WHERE `no_faktur` = '" + NoFaktur + "'";
+
+            Console.WriteLine(query);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Berhasil Update Nama/Alamat Pelanggan");
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("" + ex.Message);
+                    }
+                }
+            }
         }
     }
 }

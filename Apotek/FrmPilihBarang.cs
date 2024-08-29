@@ -30,6 +30,10 @@ namespace Apotek
         private void FrmPilihBarang_Load(object sender, EventArgs e)
         {
             LoadData();
+            this.BeginInvoke(new Action(() =>
+            {
+                SEARCH.Focus();
+            }));
         }
         private void SearchData()
         {
@@ -77,6 +81,7 @@ namespace Apotek
                                     string hargaRupiah3 = hargaJual3.ToString("N0", new CultureInfo("id-ID"));
                                     string hargaRupiah4 = hargaJual4.ToString("N0", new CultureInfo("id-ID"));
 
+                                    namaBarang = namaBarang.ToUpper();
                                     // Menambahkan data ke DataGridView
                                     dgv.Rows.Add(kodeBarang, namaBarang, jumlahBarang, lempengbox, butirLempeng, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, hargaRupiah4);
                                 }
@@ -139,6 +144,8 @@ namespace Apotek
                                     string hargaRupiah3 = hargaJual3.ToString("N0", new CultureInfo("id-ID"));
                                     string hargaRupiah4 = hargaJual4.ToString("N0", new CultureInfo("id-ID"));
 
+                                    namaBarang = namaBarang.ToUpper();
+
                                     // Menambahkan data ke DataGridView
                                     dgv.Rows.Add(kodeBarang, namaBarang, jumlahBarang, lempengbox, butirLempeng, Modal, hargaRupiah1, hargaRupiah2, hargaRupiah3, hargaRupiah4);
 
@@ -184,6 +191,26 @@ namespace Apotek
         private void SEARCH_TextChanged(object sender, EventArgs e)
         {
             SearchData();
+        }
+
+        private void dgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                btnSave.PerformClick();
+            }
+        }
+
+        private void dgv_CurrentCellChanged(object sender, EventArgs e)
+        {
+            if (dgv.CurrentRow != null)
+            {
+                DataGridViewRow row = this.dgv.CurrentRow;
+                KODEBARANG.Text = row.Cells["column2"].Value.ToString();
+                KODEBRG.Text = row.Cells["column1"].Value.ToString();
+                btnSave.Enabled = true;
+            }
         }
     }
 }

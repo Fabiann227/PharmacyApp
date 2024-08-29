@@ -29,10 +29,10 @@ namespace Apotek
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.NAMAPELANGGAN = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ALAMAT = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,16 +67,14 @@ namespace Apotek
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQtyLempeng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQtyButir = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.JATUHTEMPO = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
@@ -86,7 +84,6 @@ namespace Apotek
             this.TGLPENGAMBILAN = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbl_NOFAKTUR = new System.Windows.Forms.Label();
             this.lbl_TOTALBARANG = new System.Windows.Forms.Label();
             this.btnSimpan = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
@@ -113,6 +110,7 @@ namespace Apotek
             this.NAMAPELANGGAN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NAMAPELANGGAN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NAMAPELANGGAN.Location = new System.Drawing.Point(122, 15);
+            this.NAMAPELANGGAN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NAMAPELANGGAN.Name = "NAMAPELANGGAN";
             this.NAMAPELANGGAN.PasswordChar = '\0';
             this.NAMAPELANGGAN.PlaceholderText = "F1";
@@ -144,6 +142,7 @@ namespace Apotek
             this.ALAMAT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ALAMAT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ALAMAT.Location = new System.Drawing.Point(67, 56);
+            this.ALAMAT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ALAMAT.Name = "ALAMAT";
             this.ALAMAT.PasswordChar = '\0';
             this.ALAMAT.PlaceholderText = "";
@@ -196,7 +195,7 @@ namespace Apotek
             this.groupBox2.Controls.Add(this.KEUNTUNGAN);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(215, 548);
+            this.groupBox2.Location = new System.Drawing.Point(215, 553);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(768, 138);
             this.groupBox2.TabIndex = 4;
@@ -210,6 +209,7 @@ namespace Apotek
             this.BUTIR.Enabled = false;
             this.BUTIR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BUTIR.Location = new System.Drawing.Point(298, 99);
+            this.BUTIR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BUTIR.Name = "BUTIR";
             this.BUTIR.Size = new System.Drawing.Size(67, 30);
             this.BUTIR.TabIndex = 4;
@@ -223,6 +223,7 @@ namespace Apotek
             this.LEMPENG.Enabled = false;
             this.LEMPENG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LEMPENG.Location = new System.Drawing.Point(299, 61);
+            this.LEMPENG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LEMPENG.Name = "LEMPENG";
             this.LEMPENG.Size = new System.Drawing.Size(67, 30);
             this.LEMPENG.TabIndex = 4;
@@ -235,6 +236,7 @@ namespace Apotek
             this.QTY.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.QTY.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.QTY.Location = new System.Drawing.Point(298, 19);
+            this.QTY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.QTY.Name = "QTY";
             this.QTY.Size = new System.Drawing.Size(67, 30);
             this.QTY.TabIndex = 4;
@@ -253,6 +255,7 @@ namespace Apotek
             this.NAMABARANG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NAMABARANG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NAMABARANG.Location = new System.Drawing.Point(92, 19);
+            this.NAMABARANG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NAMABARANG.Name = "NAMABARANG";
             this.NAMABARANG.PasswordChar = '\0';
             this.NAMABARANG.PlaceholderText = "";
@@ -354,6 +357,7 @@ namespace Apotek
             this.HARGA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.HARGA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.HARGA.Location = new System.Drawing.Point(523, 18);
+            this.HARGA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HARGA.Name = "HARGA";
             this.HARGA.PasswordChar = '\0';
             this.HARGA.PlaceholderText = "";
@@ -427,6 +431,7 @@ namespace Apotek
             this.SUBTOTAL.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SUBTOTAL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SUBTOTAL.Location = new System.Drawing.Point(92, 99);
+            this.SUBTOTAL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SUBTOTAL.Name = "SUBTOTAL";
             this.SUBTOTAL.PasswordChar = '\0';
             this.SUBTOTAL.PlaceholderText = "";
@@ -447,6 +452,7 @@ namespace Apotek
             this.KEUNTUNGANBUTIR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.KEUNTUNGANBUTIR.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.KEUNTUNGANBUTIR.Location = new System.Drawing.Point(713, 57);
+            this.KEUNTUNGANBUTIR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.KEUNTUNGANBUTIR.Name = "KEUNTUNGANBUTIR";
             this.KEUNTUNGANBUTIR.PasswordChar = '\0';
             this.KEUNTUNGANBUTIR.PlaceholderText = "";
@@ -469,6 +475,7 @@ namespace Apotek
             this.KEUNTUNGANLEMPENG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.KEUNTUNGANLEMPENG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.KEUNTUNGANLEMPENG.Location = new System.Drawing.Point(671, 57);
+            this.KEUNTUNGANLEMPENG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.KEUNTUNGANLEMPENG.Name = "KEUNTUNGANLEMPENG";
             this.KEUNTUNGANLEMPENG.PasswordChar = '\0';
             this.KEUNTUNGANLEMPENG.PlaceholderText = "";
@@ -491,6 +498,7 @@ namespace Apotek
             this.KEUNTUNGAN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.KEUNTUNGAN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.KEUNTUNGAN.Location = new System.Drawing.Point(630, 57);
+            this.KEUNTUNGAN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.KEUNTUNGAN.Name = "KEUNTUNGAN";
             this.KEUNTUNGAN.PasswordChar = '\0';
             this.KEUNTUNGAN.PlaceholderText = "";
@@ -516,9 +524,9 @@ namespace Apotek
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.dgv);
-            this.groupBox3.Location = new System.Drawing.Point(12, 153);
+            this.groupBox3.Location = new System.Drawing.Point(12, 131);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(971, 389);
+            this.groupBox3.Size = new System.Drawing.Size(971, 421);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cart";
@@ -528,20 +536,20 @@ namespace Apotek
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv.ColumnHeadersHeight = 30;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -551,40 +559,39 @@ namespace Apotek
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
+            this.Quantity,
             this.ColumnQtyLempeng,
             this.ColumnQtyButir,
-            this.Column5,
             this.Column6,
             this.Column11,
             this.Column12,
             this.Column13,
             this.Column14});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv.Location = new System.Drawing.Point(3, 16);
             this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
             this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv.RowHeadersVisible = false;
+            this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 28;
-            this.dgv.Size = new System.Drawing.Size(965, 370);
+            this.dgv.Size = new System.Drawing.Size(965, 402);
             this.dgv.TabIndex = 0;
             this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -599,7 +606,7 @@ namespace Apotek
             this.dgv.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgv.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv.ThemeStyle.HeaderStyle.Height = 30;
-            this.dgv.ThemeStyle.ReadOnly = true;
+            this.dgv.ThemeStyle.ReadOnly = false;
             this.dgv.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -607,42 +614,47 @@ namespace Apotek
             this.dgv.ThemeStyle.RowsStyle.Height = 28;
             this.dgv.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_CellBeginEdit);
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.dgv.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgv_CellValidating);
+            this.dgv.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellValueChanged);
             // 
             // ID
             // 
             this.ID.FillWeight = 30F;
             this.ID.HeaderText = "#";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
             // Column7
             // 
             this.Column7.FillWeight = 30F;
             this.Column7.HeaderText = "No";
+            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
             // 
             // Column10
             // 
             this.Column10.FillWeight = 70F;
             this.Column10.HeaderText = "Kode Barang";
+            this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
             // 
             // Column1
             // 
             this.Column1.FillWeight = 150F;
             this.Column1.HeaderText = "Nama Barang";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.FillWeight = 70.9137F;
             this.Column2.HeaderText = "Level Harga";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
@@ -650,81 +662,64 @@ namespace Apotek
             // 
             this.Column3.FillWeight = 70.9137F;
             this.Column3.HeaderText = "Harga";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
-            // Column4
+            // Quantity
             // 
-            this.Column4.FillWeight = 70.9137F;
-            this.Column4.HeaderText = "Qty";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Quantity.FillWeight = 70.9137F;
+            this.Quantity.HeaderText = "Qty";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
             // 
             // ColumnQtyLempeng
             // 
             this.ColumnQtyLempeng.FillWeight = 70.9137F;
             this.ColumnQtyLempeng.HeaderText = "Qty (Lempeng)";
+            this.ColumnQtyLempeng.MinimumWidth = 6;
             this.ColumnQtyLempeng.Name = "ColumnQtyLempeng";
-            this.ColumnQtyLempeng.ReadOnly = true;
             // 
             // ColumnQtyButir
             // 
             this.ColumnQtyButir.HeaderText = "Qty (Butir)";
+            this.ColumnQtyButir.MinimumWidth = 6;
             this.ColumnQtyButir.Name = "ColumnQtyButir";
-            this.ColumnQtyButir.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 70.9137F;
-            this.Column5.HeaderText = "Satuan";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.FillWeight = 70.9137F;
             this.Column6.HeaderText = "Subtotal";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // Column11
             // 
             this.Column11.FillWeight = 40F;
             this.Column11.HeaderText = "Aksi";
+            this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
             this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Column12
             // 
             this.Column12.HeaderText = "keuntungan";
+            this.Column12.MinimumWidth = 6;
             this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
             this.Column12.Visible = false;
             // 
             // Column13
             // 
             this.Column13.HeaderText = "Keuntungan lempeng";
+            this.Column13.MinimumWidth = 6;
             this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
             this.Column13.Visible = false;
             // 
             // Column14
             // 
             this.Column14.HeaderText = "keuntungan butir";
+            this.Column14.MinimumWidth = 6;
             this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
             this.Column14.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(10, 13);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(135, 25);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "NO FAKTUR :";
             // 
             // groupBox1
             // 
@@ -743,7 +738,7 @@ namespace Apotek
             this.groupBox1.Controls.Add(this.ALAMAT);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 52);
+            this.groupBox1.Location = new System.Drawing.Point(12, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(971, 102);
             this.groupBox1.TabIndex = 11;
@@ -757,6 +752,7 @@ namespace Apotek
             this.JATUHTEMPO.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.JATUHTEMPO.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.JATUHTEMPO.Location = new System.Drawing.Point(843, 56);
+            this.JATUHTEMPO.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.JATUHTEMPO.Name = "JATUHTEMPO";
             this.JATUHTEMPO.Size = new System.Drawing.Size(69, 30);
             this.JATUHTEMPO.TabIndex = 11;
@@ -791,12 +787,14 @@ namespace Apotek
             // lbl_TOTAL
             // 
             this.lbl_TOTAL.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TOTAL.Location = new System.Drawing.Point(373, 56);
+            this.lbl_TOTAL.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbl_TOTAL.Location = new System.Drawing.Point(373, 55);
             this.lbl_TOTAL.Name = "lbl_TOTAL";
             this.lbl_TOTAL.Size = new System.Drawing.Size(100, 25);
             this.lbl_TOTAL.TabIndex = 10;
             this.lbl_TOTAL.Text = "0";
             this.lbl_TOTAL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_TOTAL.Click += new System.EventHandler(this.lbl_TOTAL_Click);
             // 
             // label11
             // 
@@ -846,21 +844,11 @@ namespace Apotek
             this.label3.TabIndex = 2;
             this.label3.Text = "Jatuh Tempo";
             // 
-            // lbl_NOFAKTUR
-            // 
-            this.lbl_NOFAKTUR.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NOFAKTUR.Location = new System.Drawing.Point(142, 13);
-            this.lbl_NOFAKTUR.Name = "lbl_NOFAKTUR";
-            this.lbl_NOFAKTUR.Size = new System.Drawing.Size(100, 25);
-            this.lbl_NOFAKTUR.TabIndex = 10;
-            this.lbl_NOFAKTUR.Text = "1001";
-            this.lbl_NOFAKTUR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // lbl_TOTALBARANG
             // 
             this.lbl_TOTALBARANG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_TOTALBARANG.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TOTALBARANG.Location = new System.Drawing.Point(12, 645);
+            this.lbl_TOTALBARANG.Location = new System.Drawing.Point(12, 655);
             this.lbl_TOTALBARANG.Name = "lbl_TOTALBARANG";
             this.lbl_TOTALBARANG.Size = new System.Drawing.Size(100, 25);
             this.lbl_TOTALBARANG.TabIndex = 10;
@@ -879,7 +867,7 @@ namespace Apotek
             this.btnSimpan.Font = new System.Drawing.Font("Bahnschrift", 9F);
             this.btnSimpan.ForeColor = System.Drawing.Color.White;
             this.btnSimpan.Image = global::Apotek.Properties.Resources.icons8_checkout_24px;
-            this.btnSimpan.Location = new System.Drawing.Point(12, 607);
+            this.btnSimpan.Location = new System.Drawing.Point(12, 619);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(95, 30);
             this.btnSimpan.TabIndex = 8;
@@ -898,7 +886,7 @@ namespace Apotek
             this.btnNew.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Image = global::Apotek.Properties.Resources.icons8_add_shopping_cart_24px_1;
-            this.btnNew.Location = new System.Drawing.Point(12, 570);
+            this.btnNew.Location = new System.Drawing.Point(12, 582);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(133, 30);
             this.btnNew.TabIndex = 9;
@@ -909,11 +897,9 @@ namespace Apotek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 698);
+            this.ClientSize = new System.Drawing.Size(995, 695);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_TOTALBARANG);
-            this.Controls.Add(this.lbl_NOFAKTUR);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSimpan);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.groupBox3);
@@ -933,7 +919,6 @@ namespace Apotek
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JATUHTEMPO)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -957,9 +942,7 @@ namespace Apotek
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2TextBox NAMABARANG;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbl_NOFAKTUR;
         private Guna.UI2.WinForms.Guna2NumericUpDown LEMPENG;
         private System.Windows.Forms.Label lbl_TOTAL;
         private System.Windows.Forms.Label label11;
@@ -986,12 +969,11 @@ namespace Apotek
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQtyLempeng;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQtyButir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewImageColumn Column11;
+        private System.Windows.Forms.DataGridViewButtonColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;

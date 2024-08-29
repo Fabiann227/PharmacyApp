@@ -15,6 +15,7 @@ namespace Apotek
 {
     public partial class FrmDashboard : Form
     {
+        private DataTable fakturDataTable;
         Button currentButton;
         string server = DatabaseConfig.Instance.Server;
         string database = DatabaseConfig.Instance.DatabaseName;
@@ -63,7 +64,8 @@ namespace Apotek
                                     totalPenjualan += totalHarga;
                                 }
 
-                                lbl_PENJUALAN.Text = totalPenjualan.ToString("C", new CultureInfo("id-ID"));
+                                //lbl_PENJUALAN.Text = totalPenjualan.ToString("C", new CultureInfo("id-ID"));
+                                lbl_PENJUALAN.Text = "-";
                             }
                             else
                             {
@@ -83,6 +85,11 @@ namespace Apotek
             Form previousForm = mainPanel.Controls.OfType<Form>().FirstOrDefault();
             if (previousForm != null)
             {
+                if (previousForm is FrmFaktur frmFaktur)
+                {
+                    frmFaktur.SaveData();
+                    fakturDataTable = frmFaktur.fakturDataTable;
+                }
                 previousForm.Dispose();
                 mainPanel.Controls.Remove(previousForm);
             }
@@ -94,6 +101,12 @@ namespace Apotek
             mainPanel.Controls.Add(f);
 
             f.Show();
+            f.Focus();
+            // Muat data jika formulir baru adalah FrmFaktur
+            if (f is FrmFaktur newFrmFaktur)
+            {
+                newFrmFaktur.LoadData(fakturDataTable);
+            }
         }
         void activebutton(object btnSender)
         {

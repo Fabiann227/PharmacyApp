@@ -89,7 +89,7 @@ namespace Apotek
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.Export = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnInsert = new Guna.UI2.WinForms.Guna2Button();
@@ -149,7 +149,7 @@ namespace Apotek
             this.groupBox2.Controls.Add(this.DISTRIBUTOR);
             this.groupBox2.Controls.Add(this.MODAL);
             this.groupBox2.Controls.Add(this.NAMABARANG);
-            this.groupBox2.Location = new System.Drawing.Point(15, 490);
+            this.groupBox2.Location = new System.Drawing.Point(12, 528);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(820, 196);
             this.groupBox2.TabIndex = 2;
@@ -200,6 +200,7 @@ namespace Apotek
             this.BUTIRBOX.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.BUTIRBOX.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BUTIRBOX.Location = new System.Drawing.Point(342, 150);
+            this.BUTIRBOX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BUTIRBOX.Name = "BUTIRBOX";
             this.BUTIRBOX.Size = new System.Drawing.Size(70, 29);
             this.BUTIRBOX.TabIndex = 3;
@@ -212,6 +213,7 @@ namespace Apotek
             this.LEMPENGBOX.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.LEMPENGBOX.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LEMPENGBOX.Location = new System.Drawing.Point(225, 150);
+            this.LEMPENGBOX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LEMPENGBOX.Name = "LEMPENGBOX";
             this.LEMPENGBOX.Size = new System.Drawing.Size(70, 29);
             this.LEMPENGBOX.TabIndex = 3;
@@ -224,6 +226,7 @@ namespace Apotek
             this.JUMLAHBARANG.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.JUMLAHBARANG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.JUMLAHBARANG.Location = new System.Drawing.Point(101, 150);
+            this.JUMLAHBARANG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.JUMLAHBARANG.Name = "JUMLAHBARANG";
             this.JUMLAHBARANG.Size = new System.Drawing.Size(75, 29);
             this.JUMLAHBARANG.TabIndex = 3;
@@ -407,6 +410,7 @@ namespace Apotek
             this.LABA2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LABA2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LABA2.Location = new System.Drawing.Point(628, 60);
+            this.LABA2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LABA2.Name = "LABA2";
             this.LABA2.PasswordChar = '\0';
             this.LABA2.PlaceholderText = "";
@@ -428,6 +432,7 @@ namespace Apotek
             this.LABA3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LABA3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LABA3.Location = new System.Drawing.Point(628, 105);
+            this.LABA3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LABA3.Name = "LABA3";
             this.LABA3.PasswordChar = '\0';
             this.LABA3.PlaceholderText = "";
@@ -450,6 +455,7 @@ namespace Apotek
             this.LABALEMPENG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LABALEMPENG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LABALEMPENG.Location = new System.Drawing.Point(628, 150);
+            this.LABALEMPENG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LABALEMPENG.Name = "LABALEMPENG";
             this.LABALEMPENG.PasswordChar = '\0';
             this.LABALEMPENG.PlaceholderText = "";
@@ -472,6 +478,7 @@ namespace Apotek
             this.LABA1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LABA1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.LABA1.Location = new System.Drawing.Point(628, 15);
+            this.LABA1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LABA1.Name = "LABA1";
             this.LABA1.PasswordChar = '\0';
             this.LABA1.PlaceholderText = "";
@@ -493,6 +500,7 @@ namespace Apotek
             this.HARGALEMPENG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.HARGALEMPENG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.HARGALEMPENG.Location = new System.Drawing.Point(511, 150);
+            this.HARGALEMPENG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HARGALEMPENG.Name = "HARGALEMPENG";
             this.HARGALEMPENG.PasswordChar = '\0';
             this.HARGALEMPENG.PlaceholderText = "";
@@ -514,6 +522,7 @@ namespace Apotek
             this.TOTALHARGA.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TOTALHARGA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TOTALHARGA.Location = new System.Drawing.Point(299, 106);
+            this.TOTALHARGA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TOTALHARGA.Name = "TOTALHARGA";
             this.TOTALHARGA.PasswordChar = '\0';
             this.TOTALHARGA.PlaceholderText = "";
@@ -534,6 +543,7 @@ namespace Apotek
             this.HARGAJUAL3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.HARGAJUAL3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.HARGAJUAL3.Location = new System.Drawing.Point(511, 106);
+            this.HARGAJUAL3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HARGAJUAL3.Name = "HARGAJUAL3";
             this.HARGAJUAL3.PasswordChar = '\0';
             this.HARGAJUAL3.PlaceholderText = "";
@@ -555,6 +565,7 @@ namespace Apotek
             this.HARGAJUAL1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.HARGAJUAL1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.HARGAJUAL1.Location = new System.Drawing.Point(511, 16);
+            this.HARGAJUAL1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HARGAJUAL1.Name = "HARGAJUAL1";
             this.HARGAJUAL1.PasswordChar = '\0';
             this.HARGAJUAL1.PlaceholderText = "";
@@ -576,6 +587,7 @@ namespace Apotek
             this.HARGAJUAL2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.HARGAJUAL2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.HARGAJUAL2.Location = new System.Drawing.Point(511, 60);
+            this.HARGAJUAL2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.HARGAJUAL2.Name = "HARGAJUAL2";
             this.HARGAJUAL2.PasswordChar = '\0';
             this.HARGAJUAL2.PlaceholderText = "";
@@ -597,6 +609,7 @@ namespace Apotek
             this.DISTRIBUTOR.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DISTRIBUTOR.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.DISTRIBUTOR.Location = new System.Drawing.Point(301, 15);
+            this.DISTRIBUTOR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DISTRIBUTOR.Name = "DISTRIBUTOR";
             this.DISTRIBUTOR.PasswordChar = '\0';
             this.DISTRIBUTOR.PlaceholderText = "";
@@ -617,6 +630,7 @@ namespace Apotek
             this.MODAL.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MODAL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.MODAL.Location = new System.Drawing.Point(299, 59);
+            this.MODAL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MODAL.Name = "MODAL";
             this.MODAL.PasswordChar = '\0';
             this.MODAL.PlaceholderText = "";
@@ -638,6 +652,7 @@ namespace Apotek
             this.NAMABARANG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NAMABARANG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.NAMABARANG.Location = new System.Drawing.Point(101, 15);
+            this.NAMABARANG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NAMABARANG.Name = "NAMABARANG";
             this.NAMABARANG.PasswordChar = '\0';
             this.NAMABARANG.PlaceholderText = "";
@@ -680,7 +695,7 @@ namespace Apotek
             this.groupBox1.Controls.Add(this.dgv);
             this.groupBox1.Location = new System.Drawing.Point(12, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1132, 438);
+            this.groupBox1.Size = new System.Drawing.Size(1132, 476);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data";
@@ -748,8 +763,9 @@ namespace Apotek
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv.RowHeadersVisible = false;
+            this.dgv.RowHeadersWidth = 51;
             this.dgv.RowTemplate.Height = 35;
-            this.dgv.Size = new System.Drawing.Size(1126, 419);
+            this.dgv.Size = new System.Drawing.Size(1126, 457);
             this.dgv.TabIndex = 0;
             this.dgv.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv.ThemeStyle.AlternatingRowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -779,6 +795,7 @@ namespace Apotek
             // 
             this.Column1.FillWeight = 60F;
             this.Column1.HeaderText = "Kode";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
@@ -786,18 +803,21 @@ namespace Apotek
             // 
             this.Column2.FillWeight = 320F;
             this.Column2.HeaderText = "Nama Barang";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Stok Awal";
+            this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "Strip (Box)";
+            this.Column17.MinimumWidth = 6;
             this.Column17.Name = "Column17";
             this.Column17.ReadOnly = true;
             this.Column17.Visible = false;
@@ -805,6 +825,7 @@ namespace Apotek
             // Column14
             // 
             this.Column14.HeaderText = "Tab (Strip)";
+            this.Column14.MinimumWidth = 6;
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
             this.Column14.Visible = false;
@@ -812,18 +833,21 @@ namespace Apotek
             // Column16
             // 
             this.Column16.HeaderText = "Box";
+            this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
             this.Column16.ReadOnly = true;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "Lempeng";
+            this.Column19.MinimumWidth = 6;
             this.Column19.Name = "Column19";
             this.Column19.ReadOnly = true;
             // 
             // Column20
             // 
             this.Column20.HeaderText = "Butir";
+            this.Column20.MinimumWidth = 6;
             this.Column20.Name = "Column20";
             this.Column20.ReadOnly = true;
             // 
@@ -831,6 +855,7 @@ namespace Apotek
             // 
             this.Column10.FillWeight = 150F;
             this.Column10.HeaderText = "Stok Akhir";
+            this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
@@ -839,6 +864,7 @@ namespace Apotek
             // 
             this.Column7.FillWeight = 130F;
             this.Column7.HeaderText = "Total Harga";
+            this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
@@ -847,6 +873,7 @@ namespace Apotek
             // 
             this.Column8.FillWeight = 170F;
             this.Column8.HeaderText = "Distributor";
+            this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
@@ -854,6 +881,7 @@ namespace Apotek
             // 
             this.Column9.FillWeight = 110F;
             this.Column9.HeaderText = "Explayerd";
+            this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             this.Column9.Visible = false;
@@ -862,6 +890,7 @@ namespace Apotek
             // 
             this.Column5.FillWeight = 120F;
             this.Column5.HeaderText = "HB";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
@@ -869,6 +898,7 @@ namespace Apotek
             // 
             this.Column11.FillWeight = 120F;
             this.Column11.HeaderText = "HJ 1";
+            this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
             // 
@@ -876,6 +906,7 @@ namespace Apotek
             // 
             this.Column13.FillWeight = 120F;
             this.Column13.HeaderText = "HJ 2";
+            this.Column13.MinimumWidth = 6;
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             // 
@@ -883,40 +914,43 @@ namespace Apotek
             // 
             this.Column15.FillWeight = 120F;
             this.Column15.HeaderText = "HJ 3";
+            this.Column15.MinimumWidth = 6;
             this.Column15.Name = "Column15";
             this.Column15.ReadOnly = true;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "HJ 4";
+            this.Column18.MinimumWidth = 6;
             this.Column18.Name = "Column18";
             this.Column18.ReadOnly = true;
             // 
             // Column12
             // 
             this.Column12.HeaderText = "";
+            this.Column12.MinimumWidth = 6;
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             this.Column12.Visible = false;
             // 
-            // guna2Button2
+            // Export
             // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.BorderRadius = 12;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::Apotek.Properties.Resources.icons8_print_24px;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(934, 11);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(40, 30);
-            this.guna2Button2.TabIndex = 5;
-            this.guna2Button2.Visible = false;
+            this.Export.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Export.BorderRadius = 12;
+            this.Export.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Export.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Export.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Export.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Export.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(56)))));
+            this.Export.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Export.ForeColor = System.Drawing.Color.White;
+            this.Export.Image = global::Apotek.Properties.Resources.icons8_print_24px;
+            this.Export.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Export.Location = new System.Drawing.Point(910, 11);
+            this.Export.Name = "Export";
+            this.Export.Size = new System.Drawing.Size(40, 30);
+            this.Export.TabIndex = 5;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
             // 
             // btnDelete
             // 
@@ -988,7 +1022,8 @@ namespace Apotek
             this.SEARCH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SEARCH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SEARCH.IconRight = global::Apotek.Properties.Resources.search;
-            this.SEARCH.Location = new System.Drawing.Point(980, 11);
+            this.SEARCH.Location = new System.Drawing.Point(956, 11);
+            this.SEARCH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SEARCH.Name = "SEARCH";
             this.SEARCH.PasswordChar = '\0';
             this.SEARCH.PlaceholderText = "Cari Data";
@@ -1006,7 +1041,7 @@ namespace Apotek
             this.gBstok.Controls.Add(this.label16);
             this.gBstok.Controls.Add(this.label12);
             this.gBstok.Controls.Add(this.label4);
-            this.gBstok.Location = new System.Drawing.Point(841, 490);
+            this.gBstok.Location = new System.Drawing.Point(838, 528);
             this.gBstok.Name = "gBstok";
             this.gBstok.Size = new System.Drawing.Size(159, 151);
             this.gBstok.TabIndex = 12;
@@ -1021,6 +1056,7 @@ namespace Apotek
             this.stokStrip.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stokStrip.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stokStrip.Location = new System.Drawing.Point(63, 61);
+            this.stokStrip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.stokStrip.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -1038,6 +1074,7 @@ namespace Apotek
             this.stokTablet.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stokTablet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stokTablet.Location = new System.Drawing.Point(63, 105);
+            this.stokTablet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.stokTablet.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -1055,6 +1092,7 @@ namespace Apotek
             this.stokSatuan.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.stokSatuan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.stokSatuan.Location = new System.Drawing.Point(63, 15);
+            this.stokSatuan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.stokSatuan.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -1100,9 +1138,9 @@ namespace Apotek
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1156, 698);
+            this.ClientSize = new System.Drawing.Size(1157, 736);
             this.Controls.Add(this.gBstok);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.Export);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
@@ -1164,7 +1202,7 @@ namespace Apotek
         private Guna.UI2.WinForms.Guna2TextBox HARGALEMPENG;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2TextBox LABALEMPENG;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button Export;
         private Guna.UI2.WinForms.Guna2NumericUpDown BUTIRBOX;
         private Guna.UI2.WinForms.Guna2NumericUpDown LEMPENGBOX;
         private Guna.UI2.WinForms.Guna2NumericUpDown JUMLAHBARANG;
